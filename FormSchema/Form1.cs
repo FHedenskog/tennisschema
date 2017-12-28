@@ -385,16 +385,6 @@ namespace FormSchema
             {
                 lbCalendar.Items.Add(date.ToString(PlayerManager.DATETIME_DISPLAY_FORMAT));
             }
-
-            if (lbCalendar.Items.Count != 0 && selectedIndex.HasValue)
-            {
-                lbCalendar.SetSelected(selectedIndex.Value, true);
-            }
-
-            else if (lbCalendar.Items.Count != 0)
-            {
-                lbCalendar.SetSelected(lbTeams.Items.Count - 1, true);
-            }
         }
 
         public void UpdateSinglePlayerSettings()
