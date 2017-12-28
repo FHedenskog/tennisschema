@@ -1,0 +1,6 @@
+C:\Users\Jens\documents\visual studio 2015\Projects\TennisSchema\TennisSchema\bin\Debug\TennisSchema.exe.config
+C:\Users\Jens\documents\visual studio 2015\Projects\TennisSchema\TennisSchema\bin\Debug\TennisSchema.exe
+C:\Users\Jens\documents\visual studio 2015\Projects\TennisSchema\TennisSchema\bin\Debug\TennisSchema.pdb
+C:\Users\Jens\documents\visual studio 2015\Projects\TennisSchema\TennisSchema\obj\Debug\TennisSchema.csprojResolveAssemblyReference.cache
+C:\Users\Jens\documents\visual studio 2015\Projects\TennisSchema\TennisSchema\obj\Debug\TennisSchema.exe
+C:\Users\Jens\documents\visual studio 2015\Projects\TennisSchema\TennisSchema\obj\Debug\TennisSchema.pdb
