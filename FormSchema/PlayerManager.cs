@@ -83,14 +83,6 @@ namespace FormSchema
 
         #endregion
 
-        #region Constructor Region
-
-        public PlayerManager()
-        {
-        }
-
-        #endregion
-
         #region Method Region
 
         public void SetTeamStatus(DoublePair pair, bool status)
