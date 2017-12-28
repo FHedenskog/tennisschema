@@ -1,5 +1,0 @@
-C:\Users\Jens\documents\visual studio 2015\Projects\TennisSchema\TennisSchema\bin\Release\TennisSchema.exe.config
-C:\Users\Jens\documents\visual studio 2015\Projects\TennisSchema\TennisSchema\bin\Release\TennisSchema.exe
-C:\Users\Jens\documents\visual studio 2015\Projects\TennisSchema\TennisSchema\bin\Release\TennisSchema.pdb
-C:\Users\Jens\documents\visual studio 2015\Projects\TennisSchema\TennisSchema\obj\Release\TennisSchema.exe
-C:\Users\Jens\documents\visual studio 2015\Projects\TennisSchema\TennisSchema\obj\Release\TennisSchema.pdb
