@@ -13,3 +13,18 @@ C:\Users\Jens\documents\visual studio 2015\Projects\TennisSchema\FormSchema\obj\
 C:\Users\Jens\documents\visual studio 2015\Projects\TennisSchema\FormSchema\obj\Release\FormSchema.csproj.GenerateResource.Cache
 C:\Users\Jens\documents\visual studio 2015\Projects\TennisSchema\FormSchema\obj\Release\FormSchema.exe
 C:\Users\Jens\documents\visual studio 2015\Projects\TennisSchema\FormSchema\obj\Release\FormSchema.pdb
+C:\code\git\personal\tennisschema\FormSchema\bin\Release\FormSchema.exe.config
+C:\code\git\personal\tennisschema\FormSchema\obj\Release\FormSchema.exe
+C:\code\git\personal\tennisschema\FormSchema\obj\Release\FormSchema.pdb
+C:\code\git\personal\tennisschema\FormSchema\bin\Release\FormSchema.exe
+C:\code\git\personal\tennisschema\FormSchema\bin\Release\FormSchema.pdb
+C:\code\git\personal\tennisschema\FormSchema\bin\Release\GemBox.Spreadsheet.dll
+C:\code\git\personal\tennisschema\FormSchema\bin\Release\GemBox.Spreadsheet.xml
+C:\code\git\personal\tennisschema\FormSchema\obj\Release\FormSchema.Form1.resources
+C:\code\git\personal\tennisschema\FormSchema\obj\Release\FormSchema.FormNewCalendar.resources
+C:\code\git\personal\tennisschema\FormSchema\obj\Release\FormSchema.FormNewPlayer.resources
+C:\code\git\personal\tennisschema\FormSchema\obj\Release\FormSchema.FormNewTeam.resources
+C:\code\git\personal\tennisschema\FormSchema\obj\Release\FormSchema.FormSetPlayerRankings.resources
+C:\code\git\personal\tennisschema\FormSchema\obj\Release\FormSchema.FormSetTeamRankings.resources
+C:\code\git\personal\tennisschema\FormSchema\obj\Release\FormSchema.Properties.Resources.resources
+C:\code\git\personal\tennisschema\FormSchema\obj\Release\FormSchema.csproj.GenerateResource.Cache

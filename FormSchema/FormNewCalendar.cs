@@ -155,7 +155,7 @@ namespace FormSchema
 
             else if (lbExcludedDates.SelectedItem != null)
             {
-                DateTime selectedDate = DateTime.ParseExact(lbExcludedDates.SelectedItem.ToString(), "d", CultureInfo.InvariantCulture);
+                DateTime selectedDate = DateTime.ParseExact(lbExcludedDates.SelectedItem.ToString(), "yyyy-MM-dd", CultureInfo.InvariantCulture);
                 ExcludedDates.Remove(selectedDate);
                 FillExcludedDatesListBox();
             }
