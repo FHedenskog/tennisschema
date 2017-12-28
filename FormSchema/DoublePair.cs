@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -21,14 +21,6 @@ namespace FormSchema
         public string Name
         {
             get { return FirstPlayer + ", " + SecondPlayer; }
-        }
-
-        #endregion
-
-        #region Constructor Region
-
-        public DoublePair()
-        {
         }
 
         #endregion
