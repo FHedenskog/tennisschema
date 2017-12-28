@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -377,13 +377,13 @@ namespace FormSchema
 
         public void FillCalendarListBox(int? selectedIndex)
         {
-            var sortedList = PlayerManager.Instance.Calendar.OrderBy(date => date.ToString()).ToList();
+            var sortedList = PlayerManager.Instance.Calendar.OrderBy(x => x).ToList();
 
             lbCalendar.Items.Clear();
 
             foreach (DateTime date in sortedList)
             {
-                lbCalendar.Items.Add(date.ToString(PlayerManager.DATETIME_FORMAT));
+                lbCalendar.Items.Add(date.ToString(PlayerManager.DATETIME_DISPLAY_FORMAT));
             }
 
             if (lbCalendar.Items.Count != 0 && selectedIndex.HasValue)

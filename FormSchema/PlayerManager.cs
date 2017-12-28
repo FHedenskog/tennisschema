@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Globalization;
 using System.IO;
@@ -31,7 +31,8 @@ namespace FormSchema
         const string CSV_FILENAME_TEAMS = "teamlist.csv";
         const string CSV_FILENAME_CALENDAR = "calendar.csv";
 
-        public const string DATETIME_FORMAT = "ddd d MMM yyyy HH:mm";
+        public const string DATETIME_PERSISENCE_FORMAT = "yyyy-MM-dd HH:mm";
+        public const string DATETIME_DISPLAY_FORMAT = "ddd dd MMM yyyy-MM-dd HH:mm";
 
         #endregion
 
@@ -136,7 +137,7 @@ namespace FormSchema
         {
             foreach (DateTime date in Calendar)
             {
-                if (date.ToString(DATETIME_FORMAT) == id)
+                if (date.ToString(DATETIME_DISPLAY_FORMAT) == id)
                 {
                     return date;
                 }
@@ -173,7 +174,7 @@ namespace FormSchema
             {
                 foreach (DateTime date in Calendar)
                 {
-                    writer.WriteLine(date.ToString(DATETIME_FORMAT));
+                    writer.WriteLine(date.ToString(DATETIME_PERSISENCE_FORMAT));
                 }
             }
         }
@@ -218,7 +219,7 @@ namespace FormSchema
                     string line = "";
                     while ((line = reader.ReadLine()) != null)
                     {
-                        DateTime temp = DateTime.ParseExact(line, DATETIME_FORMAT, CultureInfo.CurrentCulture);
+                        DateTime temp = DateTime.ParseExact(line, DATETIME_PERSISENCE_FORMAT, CultureInfo.InvariantCulture);
                         Calendar.Add(temp);
                     }
                 }

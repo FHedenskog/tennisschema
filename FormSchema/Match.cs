@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -64,7 +64,7 @@ namespace FormSchema
             if (Date == DateTime.MinValue)
                 tempDate = "Date not specified. ";
             else
-                tempDate = Date.ToString(PlayerManager.DATETIME_FORMAT);
+                tempDate = Date.ToString(PlayerManager.DATETIME_DISPLAY_FORMAT);
 
             return tempDate;
         }

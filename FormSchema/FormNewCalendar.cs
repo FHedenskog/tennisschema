@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -102,7 +102,7 @@ namespace FormSchema
             {
                 if (!string.IsNullOrEmpty(lblSetEndDate.Text))
                 {
-                    DateTime currentEndDate = DateTime.ParseExact(lblSetEndDate.Text, "d", CultureInfo.CurrentCulture);
+                    DateTime currentEndDate = DateTime.ParseExact(lblSetEndDate.Text, "yyyy-MM-dd", CultureInfo.InvariantCulture);
                     if (currentEndDate < monthCalendar.SelectionStart)
                     {
                         MessageBox.Show("The start date has to appear before the end date in time.", "Error Setting Start Date", MessageBoxButtons.OK);
@@ -120,7 +120,7 @@ namespace FormSchema
             {
                 if (!string.IsNullOrEmpty(lblSetStartDate.Text))
                 {
-                    DateTime currentStartDate = DateTime.ParseExact(lblSetStartDate.Text, "d", CultureInfo.CurrentCulture);
+                    DateTime currentStartDate = DateTime.ParseExact(lblSetStartDate.Text, "yyyy-MM-dd", CultureInfo.InvariantCulture);
                     if (currentStartDate > monthCalendar.SelectionStart)
                     {
                         MessageBox.Show("The end date has to appear after the start date in time.", "Error Setting End Date", MessageBoxButtons.OK);
@@ -155,7 +155,7 @@ namespace FormSchema
 
             else if (lbExcludedDates.SelectedItem != null)
             {
-                DateTime selectedDate = DateTime.ParseExact(lbExcludedDates.SelectedItem.ToString(), "d", CultureInfo.CurrentCulture);
+                DateTime selectedDate = DateTime.ParseExact(lbExcludedDates.SelectedItem.ToString(), "d", CultureInfo.InvariantCulture);
                 ExcludedDates.Remove(selectedDate);
                 FillExcludedDatesListBox();
             }
@@ -208,8 +208,8 @@ namespace FormSchema
         {
             if (TimeSlots.Count != 0)
             {
-                StartDate = DateTime.ParseExact(lblSetStartDate.Text, "d", CultureInfo.CurrentCulture);
-                EndDate = DateTime.ParseExact(lblSetEndDate.Text, "d", CultureInfo.CurrentCulture);
+                StartDate = DateTime.ParseExact(lblSetStartDate.Text, "yyyy-MM-dd", CultureInfo.InvariantCulture);
+                EndDate = DateTime.ParseExact(lblSetEndDate.Text, "yyyy-MM-dd", CultureInfo.InvariantCulture);
 
                 this.FormClosing -= FormNewCalendar_FormClosing;
                 this.Close();

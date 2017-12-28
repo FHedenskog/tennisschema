@@ -24,7 +24,6 @@ C:\code\git\personal\tennisschema\FormSchema\bin\Debug\FormSchema.exe
 C:\code\git\personal\tennisschema\FormSchema\bin\Debug\FormSchema.pdb
 C:\code\git\personal\tennisschema\FormSchema\bin\Debug\GemBox.Spreadsheet.dll
 C:\code\git\personal\tennisschema\FormSchema\bin\Debug\GemBox.Spreadsheet.xml
-C:\code\git\personal\tennisschema\FormSchema\obj\Debug\FormSchema.csprojResolveAssemblyReference.cache
 C:\code\git\personal\tennisschema\FormSchema\obj\Debug\FormSchema.Form1.resources
 C:\code\git\personal\tennisschema\FormSchema\obj\Debug\FormSchema.FormNewCalendar.resources
 C:\code\git\personal\tennisschema\FormSchema\obj\Debug\FormSchema.FormNewPlayer.resources
