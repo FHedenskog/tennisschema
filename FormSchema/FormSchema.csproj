@@ -67,41 +67,41 @@
     <Compile Include="DoubleGroup.cs" />
     <Compile Include="DoubleMatch.cs" />
     <Compile Include="DoublePair.cs" />
-    <Compile Include="Form1.cs">
+    <Compile Include="Forms\TennisSchemaGeneratorForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="Forms\TennisSchemaGeneratorForm.Designer.cs">
+      <DependentUpon>TennisSchemaGeneratorForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormNewCalendar.cs">
+    <Compile Include="Forms\NewCalendarForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormNewCalendar.Designer.cs">
-      <DependentUpon>FormNewCalendar.cs</DependentUpon>
+    <Compile Include="Forms\NewCalendarForm.Designer.cs">
+      <DependentUpon>NewCalendarForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormNewPlayer.cs">
+    <Compile Include="Forms\NewPlayerForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormNewPlayer.Designer.cs">
-      <DependentUpon>FormNewPlayer.cs</DependentUpon>
+    <Compile Include="Forms\NewPlayerForm.Designer.cs">
+      <DependentUpon>NewPlayerForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormNewTeam.cs">
+    <Compile Include="Forms\NewDoublePairForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormNewTeam.Designer.cs">
-      <DependentUpon>FormNewTeam.cs</DependentUpon>
+    <Compile Include="Forms\NewDoublePairForm.Designer.cs">
+      <DependentUpon>NewDoublePairForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormSetPlayerRankings.cs">
+    <Compile Include="Forms\SetPlayerRankingsForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormSetPlayerRankings.Designer.cs">
-      <DependentUpon>FormSetPlayerRankings.cs</DependentUpon>
+    <Compile Include="Forms\SetPlayerRankingsForm.Designer.cs">
+      <DependentUpon>SetPlayerRankingsForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormSetTeamRankings.cs">
+    <Compile Include="Forms\SetDoublesRankingsForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormSetTeamRankings.Designer.cs">
-      <DependentUpon>FormSetTeamRankings.cs</DependentUpon>
+    <Compile Include="Forms\SetDoublesRankingsForm.Designer.cs">
+      <DependentUpon>SetDoublesRankingsForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Group.cs" />
     <Compile Include="Match.cs" />
@@ -112,23 +112,23 @@
     <Compile Include="SingleMatch.cs" />
     <Compile Include="SinglePlayer.cs" />
     <Compile Include="TimeSlot.cs" />
-    <EmbeddedResource Include="Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\TennisSchemaGeneratorForm.resx">
+      <DependentUpon>TennisSchemaGeneratorForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormNewCalendar.resx">
-      <DependentUpon>FormNewCalendar.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\NewCalendarForm.resx">
+      <DependentUpon>NewCalendarForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormNewPlayer.resx">
-      <DependentUpon>FormNewPlayer.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\NewPlayerForm.resx">
+      <DependentUpon>NewPlayerForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormNewTeam.resx">
-      <DependentUpon>FormNewTeam.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\NewDoublePairForm.resx">
+      <DependentUpon>NewDoublePairForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormSetPlayerRankings.resx">
-      <DependentUpon>FormSetPlayerRankings.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\SetPlayerRankingsForm.resx">
+      <DependentUpon>SetPlayerRankingsForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormSetTeamRankings.resx">
-      <DependentUpon>FormSetTeamRankings.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\SetDoublesRankingsForm.resx">
+      <DependentUpon>SetDoublesRankingsForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

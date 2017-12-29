@@ -1,6 +1,6 @@
-﻿namespace FormSchema
+namespace FormSchema
 {
-    partial class FormNewTeam
+    partial class NewDoublePairForm
     {
         /// <summary>
         /// Required designer variable.

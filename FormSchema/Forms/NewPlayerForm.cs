@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 namespace FormSchema
 {
-    public partial class FormNewPlayer : Form
+    public partial class NewPlayerForm : Form
     {
         #region Field Region
 
@@ -28,7 +28,7 @@ namespace FormSchema
 
         #endregion
 
-        public FormNewPlayer()
+        public NewPlayerForm()
         {
             InitializeComponent();
             this.Load += new EventHandler(FormNewPlayer_Load);

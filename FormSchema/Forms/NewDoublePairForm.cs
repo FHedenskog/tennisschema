@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 namespace FormSchema
 {
-    public partial class FormNewTeam : Form
+    public partial class NewDoublePairForm : Form
     {
         #region Field Region
 
@@ -30,7 +30,7 @@ namespace FormSchema
 
         #region Constructor Region
 
-        public FormNewTeam()
+        public NewDoublePairForm()
         {
             InitializeComponent();
 

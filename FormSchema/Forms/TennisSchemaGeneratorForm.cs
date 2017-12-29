@@ -13,12 +13,12 @@ using GemBox.Spreadsheet;
 
 namespace FormSchema
 {
-    public partial class Form1 : Form
+    public partial class TennisSchemaGeneratorForm : Form
     {
         int currentDay;
         int previousDay;
 
-        public Form1()
+        public TennisSchemaGeneratorForm()
         {
             InitializeComponent();
 
@@ -88,18 +88,18 @@ namespace FormSchema
 
         private void btnAddPlayer_Click(object sender, EventArgs e)
         {
-            using (FormNewPlayer frmNewPlayer = new FormNewPlayer())
+            using (NewPlayerForm newPlayerForm = new NewPlayerForm())
             {
-                DialogResult result = frmNewPlayer.ShowDialog();
+                DialogResult result = newPlayerForm.ShowDialog();
 
-                if (result == DialogResult.OK && frmNewPlayer.SinglePlayer != null)
+                if (result == DialogResult.OK && newPlayerForm.SinglePlayer != null)
                 {
-                    if (PlayerManager.Instance.PlayerData.Contains(frmNewPlayer.SinglePlayer))
+                    if (PlayerManager.Instance.PlayerData.Contains(newPlayerForm.SinglePlayer))
                     {
                         MessageBox.Show("Entry already exists. Use Edit to modify the existing entry.");
                         return;
                     }
-                    PlayerManager.Instance.PlayerData.Add(frmNewPlayer.SinglePlayer);
+                    PlayerManager.Instance.PlayerData.Add(newPlayerForm.SinglePlayer);
                     FillSinglesListBox(null);
                 }
             }
@@ -145,22 +145,22 @@ namespace FormSchema
                 SinglePlayer player = new SinglePlayer();
                 player.CopyStats(selectedPlayer);
 
-                using (FormNewPlayer frmNewPlayer = new FormNewPlayer())
+                using (var newPlayerForm = new NewPlayerForm())
                 {
-                    frmNewPlayer.SinglePlayer = player;
-                    frmNewPlayer.ShowDialog();
+                    newPlayerForm.SinglePlayer = player;
+                    newPlayerForm.ShowDialog();
 
-                    if (frmNewPlayer.SinglePlayer == null)
+                    if (newPlayerForm.SinglePlayer == null)
                         return;
 
-                    if (frmNewPlayer.SinglePlayer.Name == selectedPlayer.Name)
+                    if (newPlayerForm.SinglePlayer.Name == selectedPlayer.Name)
                     {
-                        selectedPlayer.CopyStats(frmNewPlayer.SinglePlayer);
+                        selectedPlayer.CopyStats(newPlayerForm.SinglePlayer);
                         FillSinglesListBox(lbPlayers.SelectedIndex);
                         return;
                     }
 
-                    player = frmNewPlayer.SinglePlayer;
+                    player = newPlayerForm.SinglePlayer;
                 }
 
                 DialogResult result = MessageBox.Show(
@@ -185,19 +185,19 @@ namespace FormSchema
 
         private void btnAddTeam_Click(object sender, EventArgs e)
         {
-            using (FormNewTeam frmNewTeam = new FormNewTeam())
+            using (var newDoublePairForm = new NewDoublePairForm())
             {
-                DialogResult result = frmNewTeam.ShowDialog();
+                DialogResult result = newDoublePairForm.ShowDialog();
 
-                if (result == DialogResult.OK && frmNewTeam.DoublePair != null)
+                if (result == DialogResult.OK && newDoublePairForm.DoublePair != null)
                 {
-                    if (PlayerManager.Instance.DoubleData.Contains(frmNewTeam.DoublePair))
+                    if (PlayerManager.Instance.DoubleData.Contains(newDoublePairForm.DoublePair))
                     {
                         MessageBox.Show("Entry already exists. Use Edit to modify the existing entry.");
                         return;
                     }
-                    PlayerManager.Instance.DoubleData.Add(frmNewTeam.DoublePair);
-                    PlayerManager.Instance.SetTeamStatus(frmNewTeam.DoublePair, true);
+                    PlayerManager.Instance.DoubleData.Add(newDoublePairForm.DoublePair);
+                    PlayerManager.Instance.SetTeamStatus(newDoublePairForm.DoublePair, true);
                     FillTeamsListBox(null);
                 }
             }
@@ -245,21 +245,21 @@ namespace FormSchema
 
         private void btnGenerateCalendar_Click(object sender, EventArgs e)
         {
-            using (FormNewCalendar frmNewCalendar = new FormNewCalendar())
+            using (var newCalendarForm = new NewCalendarForm())
             {
-                DialogResult result = frmNewCalendar.ShowDialog();
+                DialogResult result = newCalendarForm.ShowDialog();
 
-                if (result == DialogResult.OK && frmNewCalendar.TimeSlots != null)
+                if (result == DialogResult.OK && newCalendarForm.TimeSlots != null)
                 {
                     PlayerManager.Instance.Calendar.Clear();
-                    DateTime currentDate = frmNewCalendar.StartDate;
+                    DateTime currentDate = newCalendarForm.StartDate;
                     bool excludedDateFound = false;
 
-                    while (currentDate <= frmNewCalendar.EndDate)
+                    while (currentDate <= newCalendarForm.EndDate)
                     {
                         excludedDateFound = false;
 
-                        foreach (DateTime excludedDate in frmNewCalendar.ExcludedDates)
+                        foreach (DateTime excludedDate in newCalendarForm.ExcludedDates)
                         {
                             if (excludedDate == currentDate)
                             {
@@ -273,7 +273,7 @@ namespace FormSchema
                             continue;
                         }
                         
-                        foreach (TimeSlot slot in frmNewCalendar.TimeSlots)
+                        foreach (TimeSlot slot in newCalendarForm.TimeSlots)
                         {
                             if ((int)currentDate.DayOfWeek == slot.Weekday)
                             {
@@ -475,9 +475,9 @@ namespace FormSchema
 
         private void btnGenerateSingleGroups_Click(object sender, EventArgs e)
         {
-            using (FormSetPlayerRankings frmSetSingleRankings = new FormSetPlayerRankings())
+            using (var setPlayerRankingsForm = new SetPlayerRankingsForm())
             {
-                DialogResult result = frmSetSingleRankings.ShowDialog();
+                DialogResult result = setPlayerRankingsForm.ShowDialog();
 
                 if (result == DialogResult.OK)
                 {
@@ -636,9 +636,9 @@ namespace FormSchema
 
         private void btnGenerateDoubleGroups_Click(object sender, EventArgs e)
         {
-            using (FormSetTeamRankings frmSetTeamRankings = new FormSetTeamRankings())
+            using (var setDoublesRankingsForm = new SetDoublesRankingsForm())
             {
-                DialogResult result = frmSetTeamRankings.ShowDialog();
+                DialogResult result = setDoublesRankingsForm.ShowDialog();
 
                 if (result == DialogResult.OK)
                 {

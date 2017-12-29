@@ -1,6 +1,6 @@
-﻿namespace FormSchema
+namespace FormSchema
 {
-    partial class FormNewCalendar
+    partial class NewCalendarForm
     {
         /// <summary>
         /// Required designer variable.

@@ -1,6 +1,6 @@
-﻿namespace FormSchema
+namespace FormSchema
 {
-    partial class FormNewPlayer
+    partial class NewPlayerForm
     {
         /// <summary>
         /// Required designer variable.

@@ -1,6 +1,6 @@
-﻿namespace FormSchema
+namespace FormSchema
 {
-    partial class Form1
+    partial class TennisSchemaGeneratorForm
     {
         /// <summary>
         /// Required designer variable.

@@ -11,7 +11,7 @@ using System.Windows.Forms;
 
 namespace FormSchema
 {
-    public partial class FormNewCalendar : Form
+    public partial class NewCalendarForm : Form
     {
         List<DateTime> excludedDates = new List<DateTime>();
         List<TimeSlot> timeSlots = new List<TimeSlot>();
@@ -43,7 +43,7 @@ namespace FormSchema
             private set { endDate = value; }
         }
 
-        public FormNewCalendar()
+        public NewCalendarForm()
         {
             InitializeComponent();
 

@@ -1,6 +1,6 @@
-﻿namespace FormSchema
+namespace FormSchema
 {
-    partial class FormSetPlayerRankings
+    partial class SetPlayerRankingsForm
     {
         /// <summary>
         /// Required designer variable.
