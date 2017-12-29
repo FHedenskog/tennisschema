@@ -1,4 +1,4 @@
-namespace FormSchema
+namespace FormSchema.Views
 {
     partial class SetPlayerRankingsForm
     {

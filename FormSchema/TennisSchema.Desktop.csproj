@@ -67,40 +67,40 @@
     <Compile Include="DoubleGroup.cs" />
     <Compile Include="DoubleMatch.cs" />
     <Compile Include="DoublePair.cs" />
-    <Compile Include="Forms\TennisSchemaGeneratorForm.cs">
+    <Compile Include="Views\TennisSchemaGeneratorForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\TennisSchemaGeneratorForm.Designer.cs">
+    <Compile Include="Views\TennisSchemaGeneratorForm.Designer.cs">
       <DependentUpon>TennisSchemaGeneratorForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\NewCalendarForm.cs">
+    <Compile Include="Views\NewCalendarForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\NewCalendarForm.Designer.cs">
+    <Compile Include="Views\NewCalendarForm.Designer.cs">
       <DependentUpon>NewCalendarForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\NewPlayerForm.cs">
+    <Compile Include="Views\NewPlayerForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\NewPlayerForm.Designer.cs">
+    <Compile Include="Views\NewPlayerForm.Designer.cs">
       <DependentUpon>NewPlayerForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\NewDoublePairForm.cs">
+    <Compile Include="Views\NewDoublePairForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\NewDoublePairForm.Designer.cs">
+    <Compile Include="Views\NewDoublePairForm.Designer.cs">
       <DependentUpon>NewDoublePairForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\SetPlayerRankingsForm.cs">
+    <Compile Include="Views\SetPlayerRankingsForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\SetPlayerRankingsForm.Designer.cs">
+    <Compile Include="Views\SetPlayerRankingsForm.Designer.cs">
       <DependentUpon>SetPlayerRankingsForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\SetDoublesRankingsForm.cs">
+    <Compile Include="Views\SetDoublesRankingsForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\SetDoublesRankingsForm.Designer.cs">
+    <Compile Include="Views\SetDoublesRankingsForm.Designer.cs">
       <DependentUpon>SetDoublesRankingsForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Group.cs" />
@@ -112,22 +112,22 @@
     <Compile Include="SingleMatch.cs" />
     <Compile Include="SinglePlayer.cs" />
     <Compile Include="TimeSlot.cs" />
-    <EmbeddedResource Include="Forms\TennisSchemaGeneratorForm.resx">
+    <EmbeddedResource Include="Views\TennisSchemaGeneratorForm.resx">
       <DependentUpon>TennisSchemaGeneratorForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\NewCalendarForm.resx">
+    <EmbeddedResource Include="Views\NewCalendarForm.resx">
       <DependentUpon>NewCalendarForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\NewPlayerForm.resx">
+    <EmbeddedResource Include="Views\NewPlayerForm.resx">
       <DependentUpon>NewPlayerForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\NewDoublePairForm.resx">
+    <EmbeddedResource Include="Views\NewDoublePairForm.resx">
       <DependentUpon>NewDoublePairForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\SetPlayerRankingsForm.resx">
+    <EmbeddedResource Include="Views\SetPlayerRankingsForm.resx">
       <DependentUpon>SetPlayerRankingsForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\SetDoublesRankingsForm.resx">
+    <EmbeddedResource Include="Views\SetDoublesRankingsForm.resx">
       <DependentUpon>SetDoublesRankingsForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">

@@ -11,7 +11,7 @@ using System.IO;
 
 using GemBox.Spreadsheet;
 
-namespace FormSchema
+namespace FormSchema.Views
 {
     public partial class TennisSchemaGeneratorForm : Form
     {

@@ -8,44 +8,37 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace FormSchema
+namespace FormSchema.Views
 {
-    public partial class SetPlayerRankingsForm : Form
+    public partial class SetDoublesRankingsForm : Form
     {
-        public SetPlayerRankingsForm()
+        public SetDoublesRankingsForm()
         {
             InitializeComponent();
 
-            this.Load += new EventHandler(OnSetPlayerRankingsFormLoad);
-            this.FormClosing += new FormClosingEventHandler(OnSetPlayerRankingsFormClosing);
+            this.Load += new EventHandler(OnSetDoublesRankingsFormLoad);
+            this.FormClosing += new FormClosingEventHandler(OnSetDoublesRankingsFormClosing);
 
-            lbRankings.SelectedIndexChanged += new EventHandler(OnSetPlayerRankingsSelectedIndexChanged);
+            lbRankings.SelectedIndexChanged += new EventHandler(OnSetDublesRankingsSelectedIndexChanged);
             btnIncrease.Click += new EventHandler(OnIncreaseButtonClick);
             btnDecrease.Click += new EventHandler(OnDecreaseButtonClick);
             btnOK.Click += new EventHandler(OnOKButtonClick);
         }
 
-        private void OnSetPlayerRankingsFormLoad(object sender, EventArgs e)
+        private void OnSetDoublesRankingsFormLoad(object sender, EventArgs e)
         {
             lbRankings.Items.Clear();
             int currentRank = 1;
 
-            foreach (SinglePlayer player in PlayerManager.Instance.PlayerData)
+            foreach (DoublePair pair in PlayerManager.Instance.DoubleData)
             {
-                if (player.PlayingSingle)
-                {
-                    player.Ranking = currentRank;
-                    lbRankings.Items.Add(player.ToStringWithRank());
-                    currentRank++;
-                }
-                else
-                {
-                    player.Ranking = 999;
-                }
+                pair.Ranking = currentRank;
+                lbRankings.Items.Add(pair.ToStringWithRank());
+                currentRank++;
             }
         }
 
-        private void OnSetPlayerRankingsFormClosing(object sender, FormClosingEventArgs e)
+        private void OnSetDoublesRankingsFormClosing(object sender, FormClosingEventArgs e)
         {
             if (e.CloseReason == CloseReason.UserClosing)
             {
@@ -53,7 +46,7 @@ namespace FormSchema
             }
         }
 
-        private void OnSetPlayerRankingsSelectedIndexChanged(object sender, EventArgs e)
+        private void OnSetDublesRankingsSelectedIndexChanged(object sender, EventArgs e)
         {
             if (lbRankings.SelectedIndex == 0)
                 btnIncrease.Enabled = false;
@@ -71,19 +64,19 @@ namespace FormSchema
             if (lbRankings.SelectedItem != null)
             {
                 string promotedFullName = lbRankings.SelectedItem.ToString();
-                string[] promotedParts = promotedFullName.Split(',');
+                string[] promotedParts = promotedFullName.Split('.');
                 string promotedName = promotedParts[0].Trim();
-                SinglePlayer promotedPlayer = PlayerManager.Instance.GetPlayer(promotedName);
-                promotedPlayer.Ranking -= 1;
+                DoublePair promotedPair = PlayerManager.Instance.GetPair(promotedName);
+                promotedPair.Ranking -= 1;
 
                 string demotedFullName = lbRankings.Items[lbRankings.SelectedIndex - 1].ToString();
-                string[] demotedParts = demotedFullName.Split(',');
+                string[] demotedParts = demotedFullName.Split('.');
                 string demotedName = demotedParts[0].Trim();
-                SinglePlayer demotedPlayer = PlayerManager.Instance.GetPlayer(demotedName);
-                demotedPlayer.Ranking += 1;
+                DoublePair demotedPair = PlayerManager.Instance.GetPair(demotedName);
+                demotedPair.Ranking += 1;
 
                 int newSelectedIndex = lbRankings.SelectedIndex - 1;
-                
+
 
                 FillRankingListBox(newSelectedIndex);
             }
@@ -94,16 +87,16 @@ namespace FormSchema
             if (lbRankings.SelectedItem != null)
             {
                 string demotedFullName = lbRankings.SelectedItem.ToString();
-                string[] demotedParts = demotedFullName.Split(',');
+                string[] demotedParts = demotedFullName.Split('.');
                 string demotedName = demotedParts[0].Trim();
-                SinglePlayer demotedPlayer = PlayerManager.Instance.GetPlayer(demotedName);
-                demotedPlayer.Ranking += 1;
+                DoublePair demotedPair = PlayerManager.Instance.GetPair(demotedName);
+                demotedPair.Ranking += 1;
 
                 string promotedFullName = lbRankings.Items[lbRankings.SelectedIndex + 1].ToString();
-                string[] promotedParts = promotedFullName.Split(',');
+                string[] promotedParts = promotedFullName.Split('.');
                 string promotedName = promotedParts[0].Trim();
-                SinglePlayer promotedPlayer = PlayerManager.Instance.GetPlayer(promotedName);
-                promotedPlayer.Ranking -= 1;
+                DoublePair promotedPair = PlayerManager.Instance.GetPair(promotedName);
+                promotedPair.Ranking -= 1;
 
                 int newSelectedIndex = lbRankings.SelectedIndex + 1;
 
@@ -113,23 +106,23 @@ namespace FormSchema
 
         private void OnOKButtonClick(object sender, EventArgs e)
         {
-            this.FormClosing -= OnSetPlayerRankingsFormClosing;
+            this.FormClosing -= OnSetDoublesRankingsFormClosing;
             this.Close();
         }
 
         private void FillRankingListBox(int newSelectedIndex)
         {
-            int playerCount = lbRankings.Items.Count;
+            int pairCount = lbRankings.Items.Count;
             lbRankings.Items.Clear();
 
             int currentRank = 1;
-            while (currentRank <= playerCount)
+            while (currentRank <= pairCount)
             {
-                foreach (SinglePlayer player in PlayerManager.Instance.PlayerData)
+                foreach (DoublePair pair in PlayerManager.Instance.DoubleData)
                 {
-                    if (player.Ranking == currentRank)
+                    if (pair.Ranking == currentRank)
                     {
-                        lbRankings.Items.Add(player.ToStringWithRank());
+                        lbRankings.Items.Add(pair.ToStringWithRank());
                         break;
                     }
                 }
