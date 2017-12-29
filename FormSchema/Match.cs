@@ -8,15 +8,9 @@ namespace FormSchema
 {
     public class Match
     {
-        #region Field Region
-
         protected bool isInCalendar;
         protected string setup;
         protected DateTime date;
-
-        #endregion
-
-        #region Property Region
 
         public bool IsInCalendar
         {
@@ -36,10 +30,6 @@ namespace FormSchema
             protected set { setup = value; }
         }
 
-        #endregion
-
-        #region Constructor Region
-
         public Match()
         {
             IsInCalendar = false;
@@ -53,10 +43,6 @@ namespace FormSchema
             Date = date;
         }
 
-        #endregion
-
-        #region Method Region
-
         public string GetDate()
         {
             string tempDate;
@@ -68,10 +54,6 @@ namespace FormSchema
 
             return tempDate;
         }
-
-        #endregion
-
-        #region Virtual Method Region
 
         public virtual bool PlayersReady()
         {
@@ -88,7 +70,5 @@ namespace FormSchema
             PlayerManager.Instance.Matches.Add(this);
             IsInCalendar = true;
         }
-
-        #endregion
     }
 }

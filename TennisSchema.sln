@@ -3,13 +3,15 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
 VisualStudioVersion = 14.0.25123.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FormSchema", "FormSchema\FormSchema.csproj", "{C19CFD49-073A-42C1-917F-D493317CA6A0}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TennisSchema.Desktop", "FormSchema\TennisSchema.Desktop.csproj", "{C19CFD49-073A-42C1-917F-D493317CA6A0}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SharedKernel", "SharedKernel", "{0A93067D-B546-47E9-A8BC-9A99282F93D1}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "PersistenceManagement", "PersistenceManagement", "{88CC2A14-0165-413D-9E33-68C975A87E1D}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SchemaManagement", "SchemaManagement", "{A7F81683-E466-4977-94EB-782398B2AD99}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PersistenceManagement.Core", "PersistenceManagement.Core\PersistenceManagement.Core.csproj", "{FA1439DB-4718-4D11-A5EA-6C0487FC27F3}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,8 +23,15 @@ Global
 		{C19CFD49-073A-42C1-917F-D493317CA6A0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C19CFD49-073A-42C1-917F-D493317CA6A0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C19CFD49-073A-42C1-917F-D493317CA6A0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FA1439DB-4718-4D11-A5EA-6C0487FC27F3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FA1439DB-4718-4D11-A5EA-6C0487FC27F3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FA1439DB-4718-4D11-A5EA-6C0487FC27F3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FA1439DB-4718-4D11-A5EA-6C0487FC27F3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{FA1439DB-4718-4D11-A5EA-6C0487FC27F3} = {88CC2A14-0165-413D-9E33-68C975A87E1D}
 	EndGlobalSection
 EndGlobal

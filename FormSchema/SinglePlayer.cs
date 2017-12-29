@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,8 +8,6 @@ namespace FormSchema
 {
     public class SinglePlayer
     {
-        #region Field Region
-
         public string Name;
 
         public bool CanPlay;
@@ -22,17 +20,9 @@ namespace FormSchema
 
         public int Ranking;
 
-        #endregion
-
-        #region Constructor Region
-
         public SinglePlayer()
         {
         }
-
-        #endregion
-
-        #region Method Region
 
         public override string ToString()
         {
@@ -83,7 +73,5 @@ namespace FormSchema
             IsInTeam = bool.Parse(parts[4]);
             Ranking = int.Parse(parts[5]);
         }
-
-        #endregion
     }
 }

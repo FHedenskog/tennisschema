@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,36 +8,16 @@ namespace FormSchema
 {
     public class DoubleGroup : Group
     {
-        #region Field Region
-
         readonly List<DoublePair> pairs = new List<DoublePair>();
         bool doubleRoundRobin;
 
-        #endregion
-
-        #region Property Region
-
-        public List<DoublePair> Pairs
-        {
-            get { return pairs; }
-        }
-
-        #endregion
-
-        #region Constructor Region
+        public List<DoublePair> Pairs { get { return pairs; } }
 
         public DoubleGroup(int allowedSize, int index, bool playDoubleRoundRobin)
             : base(allowedSize, index)
         {
             doubleRoundRobin = playDoubleRoundRobin;
         }
-
-        #endregion
-
-        #region Method Region
-        #endregion
-
-        #region Virtual Method Region
 
         public override void AddToGroup(object entry)
         {
@@ -136,10 +116,6 @@ namespace FormSchema
             }
             return success;
         }
-
-        #endregion
-
-        #region Schedule Method Region
 
         private void CreateScheduleOfTwo()
         {
@@ -431,7 +407,5 @@ namespace FormSchema
                 round++;
             }
         }
-
-        #endregion
     }
 }

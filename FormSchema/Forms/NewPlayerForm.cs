@@ -12,33 +12,21 @@ namespace FormSchema
 {
     public partial class NewPlayerForm : Form
     {
-        #region Field Region
+        private SinglePlayer _singlePlayer;
 
-        SinglePlayer singlePlayer;
-
-        #endregion
-
-        #region Property Region
-
-        public SinglePlayer SinglePlayer
-        {
-            get { return singlePlayer; }
-            set { singlePlayer = value; }
-        }
-
-        #endregion
+        public SinglePlayer SinglePlayer { get { return _singlePlayer; } set { _singlePlayer = value; } }
 
         public NewPlayerForm()
         {
             InitializeComponent();
-            this.Load += new EventHandler(FormNewPlayer_Load);
-            this.FormClosing += new FormClosingEventHandler(FormNewPlayer_FormClosing);
+            this.Load += new EventHandler(OnNewPlayerFormLoad);
+            this.FormClosing += new FormClosingEventHandler(OnNewPlayerFormClosing);
 
-            btnOK.Click += new EventHandler(btnOK_Click);
-            btnCancel.Click += new EventHandler(btnCancel_Click);
+            btnOK.Click += new EventHandler(OnOKButtonClick);
+            btnCancel.Click += new EventHandler(OnCancelButtonClick);
         }
 
-        private void FormNewPlayer_Load(object sender, EventArgs e)
+        private void OnNewPlayerFormLoad(object sender, EventArgs e)
         {
             if (SinglePlayer != null)
             {
@@ -57,7 +45,7 @@ namespace FormSchema
             }
         }
 
-        private void FormNewPlayer_FormClosing(object sender, FormClosingEventArgs e)
+        private void OnNewPlayerFormClosing(object sender, FormClosingEventArgs e)
         {
             if (e.CloseReason == CloseReason.UserClosing)
             {
@@ -65,7 +53,7 @@ namespace FormSchema
             }
         }
 
-        private void btnOK_Click(object sender, EventArgs e)
+        private void OnOKButtonClick(object sender, EventArgs e)
         {
             if (string.IsNullOrEmpty(tbName.Text))
             {
@@ -79,27 +67,27 @@ namespace FormSchema
                 return;
             }
 
-            singlePlayer = new SinglePlayer();
-            singlePlayer.Name = tbName.Text;
-            singlePlayer.PlayingSingle = cboPlayingSingle.Checked;
-            singlePlayer.PlayingDouble = cboPlayingDouble.Checked;
-            singlePlayer.CanPlay = true;
+            _singlePlayer = new SinglePlayer();
+            _singlePlayer.Name = tbName.Text;
+            _singlePlayer.PlayingSingle = cboPlayingSingle.Checked;
+            _singlePlayer.PlayingDouble = cboPlayingDouble.Checked;
+            _singlePlayer.CanPlay = true;
 
             if (!cboPlayingDouble.Enabled)
-                singlePlayer.IsInTeam = true;
+                _singlePlayer.IsInTeam = true;
             else
-                singlePlayer.IsInTeam = false;
+                _singlePlayer.IsInTeam = false;
             
             
-            this.FormClosing -= FormNewPlayer_FormClosing;
+            this.FormClosing -= OnNewPlayerFormClosing;
             this.Close();
         }
 
-        private void btnCancel_Click(object sender, EventArgs e)
+        private void OnCancelButtonClick(object sender, EventArgs e)
         {
-            singlePlayer = null;
+            _singlePlayer = null;
 
-            this.FormClosing -= FormNewPlayer_FormClosing;
+            this.FormClosing -= OnNewPlayerFormClosing;
             this.Close();
         }
     }

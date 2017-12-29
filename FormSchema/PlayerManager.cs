@@ -13,8 +13,6 @@ namespace FormSchema
 {
     public class PlayerManager
     {
-        #region Field Region
-
         private static PlayerManager instance;
 
         List<SinglePlayer> playerData = new List<SinglePlayer>();
@@ -33,10 +31,6 @@ namespace FormSchema
 
         public const string DATETIME_PERSISENCE_FORMAT = "yyyy-MM-dd HH:mm";
         public const string DATETIME_DISPLAY_FORMAT = "ddd dd MMM yyyy-MM-dd HH:mm";
-
-        #endregion
-
-        #region Property Region
 
         public static PlayerManager Instance
         {
@@ -80,10 +74,6 @@ namespace FormSchema
         {
             get { return matches; }
         }
-
-        #endregion
-
-        #region Method Region
 
         public void SetTeamStatus(DoublePair pair, bool status)
         {
@@ -136,10 +126,6 @@ namespace FormSchema
             }
             return new DateTime();
         }
-
-        #endregion
-
-        #region CSV Load and Save region
 
         public void SavePlayersCSV()
         {
@@ -218,10 +204,6 @@ namespace FormSchema
             }
         }
 
-        #endregion
-
-        #region Serializer Region
-
         public void Serialize<T>(string filename, T data)
         {
             XmlSerializer ser = new XmlSerializer(typeof(T));
@@ -242,7 +224,5 @@ namespace FormSchema
 
             return data;
         }
-
-        #endregion
     }
 }

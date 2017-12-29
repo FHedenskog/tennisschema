@@ -8,24 +8,11 @@ namespace FormSchema
 {
     public class DoublePair
     {
-        #region Field Region
-
         public string FirstPlayer;
         public string SecondPlayer;
         public int Ranking;
 
-        #endregion
-
-        #region Property Region
-
-        public string Name
-        {
-            get { return FirstPlayer + ", " + SecondPlayer; }
-        }
-
-        #endregion
-
-        #region Method Region
+        public string Name { get { return FirstPlayer + ", " + SecondPlayer; } }
 
         public override string ToString()
         {
@@ -59,10 +46,5 @@ namespace FormSchema
             SecondPlayer = parts[1];
             Ranking = int.Parse(parts[2]);
         }
-
-        #endregion
-
-        #region Virtual Method Region
-        #endregion
     }
 }

@@ -12,13 +12,7 @@ namespace FormSchema
 {
     public partial class NewDoublePairForm : Form
     {
-        #region Field Region
-
         DoublePair doublePair;
-
-        #endregion
-
-        #region Property Region
 
         public DoublePair DoublePair
         {
@@ -26,26 +20,18 @@ namespace FormSchema
             set { doublePair = value; }
         }
 
-        #endregion
-
-        #region Constructor Region
-
         public NewDoublePairForm()
         {
             InitializeComponent();
 
-            this.Load += new EventHandler(FormNewTeam_Load);
-            this.FormClosing += new FormClosingEventHandler(FormNewTeam_FormClosing);
+            this.Load += new EventHandler(OnNewDoublePairFormLoad);
+            this.FormClosing += new FormClosingEventHandler(OnNewDoublePairFormClosing);
 
-            btnOK.Click += new EventHandler(btnOK_Click);
-            btnCancel.Click += new EventHandler(btnCancel_Click);
+            btnOK.Click += new EventHandler(OnOKButtonClick);
+            btnCancel.Click += new EventHandler(OnCancelButtonClick);
         }
 
-        #endregion
-
-        #region Event Handler Region
-
-        private void FormNewTeam_Load(object sender, EventArgs e)
+        private void OnNewDoublePairFormLoad(object sender, EventArgs e)
         {
             foreach (SinglePlayer player in PlayerManager.Instance.PlayerData)
             {
@@ -57,7 +43,7 @@ namespace FormSchema
             }
         }
 
-        private void FormNewTeam_FormClosing(object sender, FormClosingEventArgs e)
+        private void OnNewDoublePairFormClosing(object sender, FormClosingEventArgs e)
         {
             if (e.CloseReason == CloseReason.UserClosing)
             {
@@ -65,7 +51,7 @@ namespace FormSchema
             }
         }
 
-        private void btnOK_Click(object sender, EventArgs e)
+        private void OnOKButtonClick(object sender, EventArgs e)
         {
             if (cbPlayer1.SelectedItem == null || cbPlayer2.SelectedItem == null)
             {
@@ -86,19 +72,17 @@ namespace FormSchema
             DoublePair.SecondPlayer = player2name;
             DoublePair.Ranking = 99;
 
-            this.FormClosing -= FormNewTeam_FormClosing;
+            this.FormClosing -= OnNewDoublePairFormClosing;
             this.Close();
 
         }
 
-        private void btnCancel_Click(object sender, EventArgs e)
+        private void OnCancelButtonClick(object sender, EventArgs e)
         {
             DoublePair = null;
 
-            this.FormClosing -= FormNewTeam_FormClosing;
+            this.FormClosing -= OnNewDoublePairFormClosing;
             this.Close();
         }
-
-        #endregion
     }
 }

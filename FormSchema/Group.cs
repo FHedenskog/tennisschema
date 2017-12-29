@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,8 +8,6 @@ namespace FormSchema
 {
     public class Group
     {
-        #region Field Region
-
         protected readonly List<Match> schedule = new List<Match>();
         protected Match nextMatch;
 
@@ -18,10 +16,6 @@ namespace FormSchema
         protected float percentageFinished;
         protected int index;
         protected string name;
-
-        #endregion
-
-        #region Property Region
 
         public List<Match> Schedule
         {
@@ -80,23 +74,12 @@ namespace FormSchema
             private set { name = value; }
         }
 
-        #endregion
-
-        #region Constructor Region
-
         public Group(int allowedSize, int index)
         {
             AllowedSize = allowedSize;
             Index = index;
             Name = "Group " + Index.ToString();
         }
-
-        #endregion
-
-        #region Method Region
-        #endregion
-
-        #region Virtual Method Region
 
         public virtual void AddToGroup(object entry)
         {
@@ -129,7 +112,5 @@ namespace FormSchema
 
             return toString;
         }
-
-        #endregion
     }
 }

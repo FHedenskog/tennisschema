@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,30 +8,12 @@ namespace FormSchema
 {
     public class DoubleMatch : Match
     {
-        #region Field Region
-
         private DoublePair pair1;
         private DoublePair pair2;
 
-        #endregion
+        public DoublePair Pair1 { get { return pair1; } private set { pair1 = value; } }
 
-        #region Property Region
-
-        public DoublePair Pair1
-        {
-            get { return pair1; }
-            private set { pair1 = value; }
-        }
-
-        public DoublePair Pair2
-        {
-            get { return pair2; }
-            private set { pair2 = value; }
-        }
-
-        #endregion
-
-        #region Constructor Region
+        public DoublePair Pair2 { get { return pair2; } private set { pair2 = value; } }
 
         public DoubleMatch(DoublePair pair1, DoublePair pair2, DateTime? date)
             : base()
@@ -44,13 +26,6 @@ namespace FormSchema
             if (date.HasValue)
                 Date = date.Value;
         }
-
-        #endregion
-
-        #region Method Region
-        #endregion
-
-        #region Virtual Method Region
 
         public override bool PlayersReady()
         {
@@ -88,7 +63,5 @@ namespace FormSchema
             pair2player1.CanPlay = false;
             pair2player2.CanPlay = false;
         }
-
-        #endregion
     }
 }

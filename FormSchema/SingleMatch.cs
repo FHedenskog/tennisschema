@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,14 +8,8 @@ namespace FormSchema
 {
     public class SingleMatch : Match
     {
-        #region Field Region
-
         private SinglePlayer player1;
         private SinglePlayer player2;
-
-        #endregion
-
-        #region Property Region
 
         public SinglePlayer Player1
         {
@@ -29,10 +23,6 @@ namespace FormSchema
             private set { player2 = value; }
         }
 
-        #endregion
-
-        #region Constructor Region
-
         public SingleMatch(SinglePlayer player1, SinglePlayer player2, DateTime? date)
             : base()
         {
@@ -44,13 +34,6 @@ namespace FormSchema
             if (date.HasValue)
                 Date = date.Value;
         }
-
-        #endregion
-
-        #region Method Region
-        #endregion
-
-        #region Virtual Method Region
 
         public override bool PlayersReady()
         {
@@ -71,7 +54,5 @@ namespace FormSchema
             player1.CanPlay = false;
             player2.CanPlay = false;
         }
-
-        #endregion
     }
 }

@@ -47,23 +47,23 @@ namespace FormSchema
         {
             InitializeComponent();
 
-            this.Load += new EventHandler(FormNewCalendar_Load);
-            this.FormClosing += new FormClosingEventHandler(FormNewCalendar_FormClosing);
+            this.Load += new EventHandler(OnNewCalendarFormLoad);
+            this.FormClosing += new FormClosingEventHandler(OnNewCalendarFormClosing);
 
-            btnSetStartDate.Click += new EventHandler(btnSetStartDate_Click);
-            btnSetEndDate.Click += new EventHandler(btnSetEndDate_Click);
+            btnSetStartDate.Click += new EventHandler(OnSetStartDateButtonClick);
+            btnSetEndDate.Click += new EventHandler(OnSetEndDateButtonClick);
 
-            btnAddExcludedDate.Click += new EventHandler(btnAddExcludedDate_Click);
-            btnRemoveExcludedDate.Click += new EventHandler(btnRemoveExcludedDate_Click);
+            btnAddExcludedDate.Click += new EventHandler(OnAddExcludedDateButtonClick);
+            btnRemoveExcludedDate.Click += new EventHandler(OnRemoveExcludedDateButtonClick);
 
-            btnAddTimeSlot.Click += new EventHandler(btnAddTimeSlot_Click);
-            btnRemoveTimeSlot.Click += new EventHandler(btnRemoveTimeSlot_Click);
+            btnAddTimeSlot.Click += new EventHandler(OnAddTimeSlotButtonClick);
+            btnRemoveTimeSlot.Click += new EventHandler(OnRemoveTimeSlotButtonClick);
 
-            btnOK.Click += new EventHandler(btnOK_Click);
-            btnCancel.Click += new EventHandler(btnCancel_Click);
+            btnOK.Click += new EventHandler(OnOKButtonClick);
+            btnCancel.Click += new EventHandler(OnCancelButtonClick);
         }
 
-        private void FormNewCalendar_Load(object sender, EventArgs e)
+        private void OnNewCalendarFormLoad(object sender, EventArgs e)
         {
 
             foreach (DayOfWeek dayOfWeek in Enum.GetValues(typeof(DayOfWeek)))
@@ -88,7 +88,7 @@ namespace FormSchema
             cbMinutes.SelectedIndex = 0;
         }
 
-        private void FormNewCalendar_FormClosing(object sender, FormClosingEventArgs e)
+        private void OnNewCalendarFormClosing(object sender, FormClosingEventArgs e)
         {
             if (e.CloseReason == CloseReason.UserClosing)
             {
@@ -96,7 +96,7 @@ namespace FormSchema
             }
         }
 
-        private void btnSetStartDate_Click(object sender, EventArgs e)
+        private void OnSetStartDateButtonClick(object sender, EventArgs e)
         {
             if (monthCalendar.SelectionStart != null)
             {
@@ -114,7 +114,7 @@ namespace FormSchema
             }
         }
 
-        private void btnSetEndDate_Click(object sender, EventArgs e)
+        private void OnSetEndDateButtonClick(object sender, EventArgs e)
         {
             if (monthCalendar.SelectionStart != null)
             {
@@ -131,7 +131,7 @@ namespace FormSchema
             }
         }
 
-        private void btnAddExcludedDate_Click(object sender, EventArgs e)
+        private void OnAddExcludedDateButtonClick(object sender, EventArgs e)
         {
             if (monthCalendar.SelectionStart != null)
             {
@@ -144,7 +144,7 @@ namespace FormSchema
             }
         }
 
-        private void btnRemoveExcludedDate_Click(object sender, EventArgs e)
+        private void OnRemoveExcludedDateButtonClick(object sender, EventArgs e)
         {
             if (monthCalendar.SelectionStart != null && lbExcludedDates.SelectedItem == null)
             {
@@ -173,7 +173,7 @@ namespace FormSchema
             }
         }
 
-        private void btnAddTimeSlot_Click(object sender, EventArgs e)
+        private void OnAddTimeSlotButtonClick(object sender, EventArgs e)
         {
             int dayOfWeek = cbDayOfWeek.SelectedIndex;
             int hours = (int)cbHours.SelectedItem;
@@ -185,7 +185,7 @@ namespace FormSchema
             FillTimeSlotsListBox();
         }
 
-        private void btnRemoveTimeSlot_Click(object sender, EventArgs e)
+        private void OnRemoveTimeSlotButtonClick(object sender, EventArgs e)
         {
             if (lbTimeSlots.SelectedItem != null)
             {
@@ -204,19 +204,19 @@ namespace FormSchema
             }
         }
 
-        private void btnOK_Click(object sender, EventArgs e)
+        private void OnOKButtonClick(object sender, EventArgs e)
         {
             if (TimeSlots.Count != 0)
             {
                 StartDate = DateTime.ParseExact(lblSetStartDate.Text, "yyyy-MM-dd", CultureInfo.InvariantCulture);
                 EndDate = DateTime.ParseExact(lblSetEndDate.Text, "yyyy-MM-dd", CultureInfo.InvariantCulture);
 
-                this.FormClosing -= FormNewCalendar_FormClosing;
+                this.FormClosing -= OnNewCalendarFormClosing;
                 this.Close();
             }
         }
 
-        private void btnCancel_Click(object sender, EventArgs e)
+        private void OnCancelButtonClick(object sender, EventArgs e)
         {
             ExcludedDates = null;
             TimeSlots = null;
@@ -224,7 +224,7 @@ namespace FormSchema
             StartDate = DateTime.MinValue;
             EndDate = DateTime.MinValue;
 
-            this.FormClosing -= FormNewCalendar_FormClosing;
+            this.FormClosing -= OnNewCalendarFormClosing;
             this.Close();
         }
     }

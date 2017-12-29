@@ -33,8 +33,8 @@ namespace FormSchema
             this.btnSavePlayers = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.lbTeams = new System.Windows.Forms.ListBox();
-            this.btnRemoveTeam = new System.Windows.Forms.Button();
-            this.btnAddTeam = new System.Windows.Forms.Button();
+            this.btnRemoveDoublePair = new System.Windows.Forms.Button();
+            this.btnAddDoublePair = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.lbPlayers = new System.Windows.Forms.ListBox();
             this.btnRemovePlayer = new System.Windows.Forms.Button();
@@ -64,8 +64,13 @@ namespace FormSchema
             this.cbSingleGroups = new System.Windows.Forms.ComboBox();
             this.lblPlayersPlayingSingle = new System.Windows.Forms.Label();
             this.btnGenerateSingleGroups = new System.Windows.Forms.Button();
-            this.label2 = new System.Windows.Forms.Label();
+            this.lblMaximumGroupSize = new System.Windows.Forms.Label();
             this.tpgCalendar = new System.Windows.Forms.TabPage();
+            this.btnSaveCalendar = new System.Windows.Forms.Button();
+            this.cbMinutes = new System.Windows.Forms.ComboBox();
+            this.cbHours = new System.Windows.Forms.ComboBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
             this.monthCalendar = new System.Windows.Forms.MonthCalendar();
             this.btnClearCalendar = new System.Windows.Forms.Button();
             this.btnGenerateSchedule = new System.Windows.Forms.Button();
@@ -73,11 +78,6 @@ namespace FormSchema
             this.btnAddTimeSlot = new System.Windows.Forms.Button();
             this.lbCalendar = new System.Windows.Forms.ListBox();
             this.btnGenerateCalendar = new System.Windows.Forms.Button();
-            this.cbMinutes = new System.Windows.Forms.ComboBox();
-            this.cbHours = new System.Windows.Forms.ComboBox();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.btnSaveCalendar = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tpgPlayers.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -120,14 +120,14 @@ namespace FormSchema
             this.btnSavePlayers.Name = "btnSavePlayers";
             this.btnSavePlayers.Size = new System.Drawing.Size(92, 23);
             this.btnSavePlayers.TabIndex = 13;
-            this.btnSavePlayers.Text = "Save Players";
+            this.btnSavePlayers.Text = "Save";
             this.btnSavePlayers.UseVisualStyleBackColor = true;
             // 
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.lbTeams);
-            this.groupBox2.Controls.Add(this.btnRemoveTeam);
-            this.groupBox2.Controls.Add(this.btnAddTeam);
+            this.groupBox2.Controls.Add(this.btnRemoveDoublePair);
+            this.groupBox2.Controls.Add(this.btnAddDoublePair);
             this.groupBox2.Location = new System.Drawing.Point(242, 7);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(221, 297);
@@ -143,23 +143,23 @@ namespace FormSchema
             this.lbTeams.Size = new System.Drawing.Size(209, 251);
             this.lbTeams.TabIndex = 7;
             // 
-            // btnRemoveTeam
+            // btnRemoveDoublePair
             // 
-            this.btnRemoveTeam.Location = new System.Drawing.Point(115, 275);
-            this.btnRemoveTeam.Name = "btnRemoveTeam";
-            this.btnRemoveTeam.Size = new System.Drawing.Size(100, 23);
-            this.btnRemoveTeam.TabIndex = 10;
-            this.btnRemoveTeam.Text = "Remove Team";
-            this.btnRemoveTeam.UseVisualStyleBackColor = true;
+            this.btnRemoveDoublePair.Location = new System.Drawing.Point(115, 275);
+            this.btnRemoveDoublePair.Name = "btnRemoveDoublePair";
+            this.btnRemoveDoublePair.Size = new System.Drawing.Size(100, 23);
+            this.btnRemoveDoublePair.TabIndex = 10;
+            this.btnRemoveDoublePair.Text = "Remove";
+            this.btnRemoveDoublePair.UseVisualStyleBackColor = true;
             // 
-            // btnAddTeam
+            // btnAddDoublePair
             // 
-            this.btnAddTeam.Location = new System.Drawing.Point(6, 275);
-            this.btnAddTeam.Name = "btnAddTeam";
-            this.btnAddTeam.Size = new System.Drawing.Size(100, 23);
-            this.btnAddTeam.TabIndex = 8;
-            this.btnAddTeam.Text = "Add Team";
-            this.btnAddTeam.UseVisualStyleBackColor = true;
+            this.btnAddDoublePair.Location = new System.Drawing.Point(6, 275);
+            this.btnAddDoublePair.Name = "btnAddDoublePair";
+            this.btnAddDoublePair.Size = new System.Drawing.Size(100, 23);
+            this.btnAddDoublePair.TabIndex = 8;
+            this.btnAddDoublePair.Text = "Add";
+            this.btnAddDoublePair.UseVisualStyleBackColor = true;
             // 
             // groupBox1
             // 
@@ -364,7 +364,7 @@ namespace FormSchema
             this.groupBox3.Controls.Add(this.cbSingleGroups);
             this.groupBox3.Controls.Add(this.lblPlayersPlayingSingle);
             this.groupBox3.Controls.Add(this.btnGenerateSingleGroups);
-            this.groupBox3.Controls.Add(this.label2);
+            this.groupBox3.Controls.Add(this.lblMaximumGroupSize);
             this.groupBox3.Location = new System.Drawing.Point(6, 9);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(198, 299);
@@ -454,14 +454,14 @@ namespace FormSchema
             this.btnGenerateSingleGroups.Text = "Generate Groups";
             this.btnGenerateSingleGroups.UseVisualStyleBackColor = true;
             // 
-            // label2
+            // lblMaximumGroupSize
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(34, 39);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(109, 13);
-            this.label2.TabIndex = 2;
-            this.label2.Text = "Maximum Group Size:";
+            this.lblMaximumGroupSize.AutoSize = true;
+            this.lblMaximumGroupSize.Location = new System.Drawing.Point(34, 39);
+            this.lblMaximumGroupSize.Name = "lblMaximumGroupSize";
+            this.lblMaximumGroupSize.Size = new System.Drawing.Size(109, 13);
+            this.lblMaximumGroupSize.TabIndex = 2;
+            this.lblMaximumGroupSize.Text = "Maximum Group Size:";
             // 
             // tpgCalendar
             // 
@@ -484,6 +484,51 @@ namespace FormSchema
             this.tpgCalendar.TabIndex = 2;
             this.tpgCalendar.Text = "Calendar";
             this.tpgCalendar.UseVisualStyleBackColor = true;
+            // 
+            // btnSaveCalendar
+            // 
+            this.btnSaveCalendar.Location = new System.Drawing.Point(14, 282);
+            this.btnSaveCalendar.Name = "btnSaveCalendar";
+            this.btnSaveCalendar.Size = new System.Drawing.Size(271, 23);
+            this.btnSaveCalendar.TabIndex = 23;
+            this.btnSaveCalendar.Text = "Save Calendar";
+            this.btnSaveCalendar.UseVisualStyleBackColor = true;
+            // 
+            // cbMinutes
+            // 
+            this.cbMinutes.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbMinutes.FormattingEnabled = true;
+            this.cbMinutes.Location = new System.Drawing.Point(406, 203);
+            this.cbMinutes.Name = "cbMinutes";
+            this.cbMinutes.Size = new System.Drawing.Size(56, 21);
+            this.cbMinutes.TabIndex = 22;
+            // 
+            // cbHours
+            // 
+            this.cbHours.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbHours.FormattingEnabled = true;
+            this.cbHours.Location = new System.Drawing.Point(338, 203);
+            this.cbHours.Name = "cbHours";
+            this.cbHours.Size = new System.Drawing.Size(56, 21);
+            this.cbHours.TabIndex = 21;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(396, 206);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(10, 13);
+            this.label7.TabIndex = 20;
+            this.label7.Text = ":";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(307, 206);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(33, 13);
+            this.label8.TabIndex = 19;
+            this.label8.Text = "Time:";
             // 
             // monthCalendar
             // 
@@ -546,52 +591,7 @@ namespace FormSchema
             this.btnGenerateCalendar.Text = "Generate Calendar";
             this.btnGenerateCalendar.UseVisualStyleBackColor = true;
             // 
-            // cbMinutes
-            // 
-            this.cbMinutes.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbMinutes.FormattingEnabled = true;
-            this.cbMinutes.Location = new System.Drawing.Point(406, 203);
-            this.cbMinutes.Name = "cbMinutes";
-            this.cbMinutes.Size = new System.Drawing.Size(56, 21);
-            this.cbMinutes.TabIndex = 22;
-            // 
-            // cbHours
-            // 
-            this.cbHours.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbHours.FormattingEnabled = true;
-            this.cbHours.Location = new System.Drawing.Point(338, 203);
-            this.cbHours.Name = "cbHours";
-            this.cbHours.Size = new System.Drawing.Size(56, 21);
-            this.cbHours.TabIndex = 21;
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(396, 206);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(10, 13);
-            this.label7.TabIndex = 20;
-            this.label7.Text = ":";
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(307, 206);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(33, 13);
-            this.label8.TabIndex = 19;
-            this.label8.Text = "Time:";
-            // 
-            // btnSaveCalendar
-            // 
-            this.btnSaveCalendar.Location = new System.Drawing.Point(14, 282);
-            this.btnSaveCalendar.Name = "btnSaveCalendar";
-            this.btnSaveCalendar.Size = new System.Drawing.Size(271, 23);
-            this.btnSaveCalendar.TabIndex = 23;
-            this.btnSaveCalendar.Text = "Save Calendar";
-            this.btnSaveCalendar.UseVisualStyleBackColor = true;
-            // 
-            // Form1
+            // TennisSchemaGeneratorForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -599,7 +599,7 @@ namespace FormSchema
             this.Controls.Add(this.tabControl1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.MaximizeBox = false;
-            this.Name = "Form1";
+            this.Name = "TennisSchemaGeneratorForm";
             this.Text = "Tennis Schema Generator";
             this.tabControl1.ResumeLayout(false);
             this.tpgPlayers.ResumeLayout(false);
@@ -628,12 +628,12 @@ namespace FormSchema
         private System.Windows.Forms.Button btnAddPlayer;
         private System.Windows.Forms.ListBox lbPlayers;
         private System.Windows.Forms.Button btnEditPlayer;
-        private System.Windows.Forms.Button btnRemoveTeam;
-        private System.Windows.Forms.Button btnAddTeam;
+        private System.Windows.Forms.Button btnRemoveDoublePair;
+        private System.Windows.Forms.Button btnAddDoublePair;
         private System.Windows.Forms.ListBox lbTeams;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label lblMaximumGroupSize;
         private System.Windows.Forms.Label lblPlayersPlayingSingle;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ComboBox cbSingleGroups;

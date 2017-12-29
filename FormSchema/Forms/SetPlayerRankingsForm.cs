@@ -16,16 +16,16 @@ namespace FormSchema
         {
             InitializeComponent();
 
-            this.Load += new EventHandler(FormSetPlayerRankings_Load);
-            this.FormClosing += new FormClosingEventHandler(FormSetPlayerRankings_FormClosing);
+            this.Load += new EventHandler(OnSetPlayerRankingsFormLoad);
+            this.FormClosing += new FormClosingEventHandler(OnSetPlayerRankingsFormClosing);
 
-            lbRankings.SelectedIndexChanged += new EventHandler(FormSetPlayerRankings_SelectedIndexChanged);
-            btnIncrease.Click += new EventHandler(btnIncrease_Click);
-            btnDecrease.Click += new EventHandler(btnDecrease_Click);
-            btnOK.Click += new EventHandler(btnOK_Click);
+            lbRankings.SelectedIndexChanged += new EventHandler(OnSetPlayerRankingsSelectedIndexChanged);
+            btnIncrease.Click += new EventHandler(OnIncreaseButtonClick);
+            btnDecrease.Click += new EventHandler(OnDecreaseButtonClick);
+            btnOK.Click += new EventHandler(OnOKButtonClick);
         }
 
-        private void FormSetPlayerRankings_Load(object sender, EventArgs e)
+        private void OnSetPlayerRankingsFormLoad(object sender, EventArgs e)
         {
             lbRankings.Items.Clear();
             int currentRank = 1;
@@ -45,7 +45,7 @@ namespace FormSchema
             }
         }
 
-        private void FormSetPlayerRankings_FormClosing(object sender, FormClosingEventArgs e)
+        private void OnSetPlayerRankingsFormClosing(object sender, FormClosingEventArgs e)
         {
             if (e.CloseReason == CloseReason.UserClosing)
             {
@@ -53,7 +53,7 @@ namespace FormSchema
             }
         }
 
-        private void FormSetPlayerRankings_SelectedIndexChanged(object sender, EventArgs e)
+        private void OnSetPlayerRankingsSelectedIndexChanged(object sender, EventArgs e)
         {
             if (lbRankings.SelectedIndex == 0)
                 btnIncrease.Enabled = false;
@@ -66,7 +66,7 @@ namespace FormSchema
                 btnDecrease.Enabled = true;
         }
 
-        private void btnIncrease_Click(object sender, EventArgs e)
+        private void OnIncreaseButtonClick(object sender, EventArgs e)
         {
             if (lbRankings.SelectedItem != null)
             {
@@ -89,7 +89,7 @@ namespace FormSchema
             }
         }
 
-        private void btnDecrease_Click(object sender, EventArgs e)
+        private void OnDecreaseButtonClick(object sender, EventArgs e)
         {
             if (lbRankings.SelectedItem != null)
             {
@@ -111,9 +111,9 @@ namespace FormSchema
             }
         }
 
-        private void btnOK_Click(object sender, EventArgs e)
+        private void OnOKButtonClick(object sender, EventArgs e)
         {
-            this.FormClosing -= FormSetPlayerRankings_FormClosing;
+            this.FormClosing -= OnSetPlayerRankingsFormClosing;
             this.Close();
         }
 

@@ -29,7 +29,6 @@ namespace FormSchema
         private void InitializeComponent()
         {
             this.lbRankings = new System.Windows.Forms.ListBox();
-            this.label2 = new System.Windows.Forms.Label();
             this.btnIncrease = new System.Windows.Forms.Button();
             this.btnDecrease = new System.Windows.Forms.Button();
             this.btnOK = new System.Windows.Forms.Button();
@@ -42,15 +41,6 @@ namespace FormSchema
             this.lbRankings.Name = "lbRankings";
             this.lbRankings.Size = new System.Drawing.Size(221, 212);
             this.lbRankings.TabIndex = 0;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(38, 9);
-            this.label2.MaximumSize = new System.Drawing.Size(221, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(0, 13);
-            this.label2.TabIndex = 2;
             // 
             // btnIncrease
             // 
@@ -89,7 +79,6 @@ namespace FormSchema
             this.Controls.Add(this.btnOK);
             this.Controls.Add(this.btnDecrease);
             this.Controls.Add(this.btnIncrease);
-            this.Controls.Add(this.label2);
             this.Controls.Add(this.lbRankings);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.MaximizeBox = false;
@@ -104,7 +93,6 @@ namespace FormSchema
         #endregion
 
         private System.Windows.Forms.ListBox lbRankings;
-        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button btnIncrease;
         private System.Windows.Forms.Button btnDecrease;
         private System.Windows.Forms.Button btnOK;

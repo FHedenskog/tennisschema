@@ -44,9 +44,9 @@ namespace FormSchema
             this.cbMinutes = new System.Windows.Forms.ComboBox();
             this.cbHours = new System.Windows.Forms.ComboBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
+            this.lblTime = new System.Windows.Forms.Label();
             this.cbDayOfWeek = new System.Windows.Forms.ComboBox();
-            this.label1 = new System.Windows.Forms.Label();
+            this.lblDayOfWeek = new System.Windows.Forms.Label();
             this.btnOK = new System.Windows.Forms.Button();
             this.btnCancel = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
@@ -146,9 +146,9 @@ namespace FormSchema
             this.groupBox2.Controls.Add(this.cbMinutes);
             this.groupBox2.Controls.Add(this.cbHours);
             this.groupBox2.Controls.Add(this.label5);
-            this.groupBox2.Controls.Add(this.label4);
+            this.groupBox2.Controls.Add(this.lblTime);
             this.groupBox2.Controls.Add(this.cbDayOfWeek);
-            this.groupBox2.Controls.Add(this.label1);
+            this.groupBox2.Controls.Add(this.lblDayOfWeek);
             this.groupBox2.Location = new System.Drawing.Point(413, 12);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(218, 260);
@@ -209,14 +209,14 @@ namespace FormSchema
             this.label5.TabIndex = 16;
             this.label5.Text = ":";
             // 
-            // label4
+            // lblTime
             // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(45, 50);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(33, 13);
-            this.label4.TabIndex = 15;
-            this.label4.Text = "Time:";
+            this.lblTime.AutoSize = true;
+            this.lblTime.Location = new System.Drawing.Point(45, 50);
+            this.lblTime.Name = "lblTime";
+            this.lblTime.Size = new System.Drawing.Size(33, 13);
+            this.lblTime.TabIndex = 15;
+            this.lblTime.Text = "Time:";
             // 
             // cbDayOfWeek
             // 
@@ -227,14 +227,14 @@ namespace FormSchema
             this.cbDayOfWeek.Size = new System.Drawing.Size(121, 21);
             this.cbDayOfWeek.TabIndex = 1;
             // 
-            // label1
+            // lblDayOfWeek
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(7, 23);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(73, 13);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Day of Week:";
+            this.lblDayOfWeek.AutoSize = true;
+            this.lblDayOfWeek.Location = new System.Drawing.Point(7, 23);
+            this.lblDayOfWeek.Name = "lblDayOfWeek";
+            this.lblDayOfWeek.Size = new System.Drawing.Size(73, 13);
+            this.lblDayOfWeek.TabIndex = 0;
+            this.lblDayOfWeek.Text = "Day of Week:";
             // 
             // btnOK
             // 
@@ -255,7 +255,7 @@ namespace FormSchema
             this.btnCancel.Text = "Cancel";
             this.btnCancel.UseVisualStyleBackColor = true;
             // 
-            // FormNewCalendar
+            // NewCalendarForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -268,7 +268,7 @@ namespace FormSchema
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-            this.Name = "FormNewCalendar";
+            this.Name = "NewCalendarForm";
             this.Text = "Calendar Settings";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
@@ -287,13 +287,13 @@ namespace FormSchema
         private System.Windows.Forms.Label lblSetEndDate;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lblDayOfWeek;
         private System.Windows.Forms.ComboBox cbDayOfWeek;
         private System.Windows.Forms.Button btnAddTimeSlot;
         private System.Windows.Forms.ComboBox cbMinutes;
         private System.Windows.Forms.ComboBox cbHours;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label lblTime;
         private System.Windows.Forms.Button btnRemoveTimeSlot;
         private System.Windows.Forms.ListBox lbTimeSlots;
         private System.Windows.Forms.Button btnAddExcludedDate;

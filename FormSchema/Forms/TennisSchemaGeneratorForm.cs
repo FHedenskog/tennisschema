@@ -24,36 +24,36 @@ namespace FormSchema
 
             SpreadsheetInfo.SetLicense("FREE-LIMITED-KEY");
 
-            this.Load += new EventHandler(Form1_Load);
+            this.Load += new EventHandler(OnTennisSchemaGeneratorFormLoad);
 
-            btnAddPlayer.Click += new EventHandler(btnAddPlayer_Click);
-            btnRemovePlayer.Click += new EventHandler(btnRemovePlayer_Click);
-            btnEditPlayer.Click += new EventHandler(btnEditPlayer_Click);
+            btnAddPlayer.Click += new EventHandler(OnAddPlayerButtonClick);
+            btnRemovePlayer.Click += new EventHandler(OnRemovePlayerButtonClick);
+            btnEditPlayer.Click += new EventHandler(OnEditPlayerButtonClick);
 
-            btnAddTeam.Click += new EventHandler(btnAddTeam_Click);
-            btnRemoveTeam.Click += new EventHandler(btnRemoveTeam_Click);
+            btnAddDoublePair.Click += new EventHandler(OnAddDoublePairButtonClick);
+            btnRemoveDoublePair.Click += new EventHandler(OnRemoveDoublePairButtonClick);
 
-            btnSavePlayers.Click += new EventHandler(btnSavePlayers_Click);
+            btnSavePlayers.Click += new EventHandler(OnSavePlayersButtonClick);
 
-            btnGenerateSingleGroups.Click += new EventHandler(btnGenerateSingleGroups_Click);
-            cbSingleGroups.SelectedValueChanged += new EventHandler(cbSingleGroups_SelectedValueChanged);
-            btnClearSingles.Click += new EventHandler(btnClearSingles_Click);
+            btnGenerateSingleGroups.Click += new EventHandler(OnGenerateSingleGroupsButtonClick);
+            cbSingleGroups.SelectedValueChanged += new EventHandler(OnSingleGroupsSelectedValueChanged);
+            btnClearSingles.Click += new EventHandler(OnClearSinglesButtonClick);
 
-            btnGenerateDoubleGroups.Click += new EventHandler(btnGenerateDoubleGroups_Click);
-            cbDoubleGroups.SelectedValueChanged += new EventHandler(cbDoubleGroups_SelectedValueChanged);
-            btnClearDoubles.Click += new EventHandler(btnClearDoubles_Click);
+            btnGenerateDoubleGroups.Click += new EventHandler(OnGenerateDoublePairGroupsButtonClick);
+            cbDoubleGroups.SelectedValueChanged += new EventHandler(OnDoublePairGroupsSelectedValueChanged);
+            btnClearDoubles.Click += new EventHandler(OnClearDoublesButtonClick);
 
-            btnGenerateCalendar.Click += new EventHandler(btnGenerateCalendar_Click);
-            btnClearCalendar.Click += new EventHandler(btnClearCalendar_Click);
-            btnAddTimeSlot.Click += new EventHandler(btnAddDate_Click);
-            btnRemoveTimeSlot.Click += new EventHandler(btnRemoveDate_Click);
+            btnGenerateCalendar.Click += new EventHandler(OnGenerateCalendarClick);
+            btnClearCalendar.Click += new EventHandler(OnClearCalendarButtonClick);
+            btnAddTimeSlot.Click += new EventHandler(OnAddDateButtonClick);
+            btnRemoveTimeSlot.Click += new EventHandler(OnRemoveDateButtonClick);
 
-            btnSaveCalendar.Click += new EventHandler(btnSaveCalendar_Click);
+            btnSaveCalendar.Click += new EventHandler(OnSaveCalendarButtonClick);
 
-            btnGenerateSchedule.Click += new EventHandler(btnGenerateSchedule_Click);
+            btnGenerateSchedule.Click += new EventHandler(OnGenerateScheduleButtonClick);
         }
 
-        private void Form1_Load(object sender, EventArgs e)
+        private void OnTennisSchemaGeneratorFormLoad(object sender, EventArgs e)
         {
             PlayerManager.Instance.LoadPlayersCSV();
 
@@ -86,7 +86,7 @@ namespace FormSchema
             FillCalendarListBox(null);
         }
 
-        private void btnAddPlayer_Click(object sender, EventArgs e)
+        private void OnAddPlayerButtonClick(object sender, EventArgs e)
         {
             using (NewPlayerForm newPlayerForm = new NewPlayerForm())
             {
@@ -105,7 +105,7 @@ namespace FormSchema
             }
         }
 
-        private void btnRemovePlayer_Click(object sender, EventArgs e)
+        private void OnRemovePlayerButtonClick(object sender, EventArgs e)
         {
             if (lbPlayers.SelectedItem != null)
             {
@@ -136,7 +136,7 @@ namespace FormSchema
             }
         }
 
-        private void btnEditPlayer_Click(object sender, EventArgs e)
+        private void OnEditPlayerButtonClick(object sender, EventArgs e)
         {
             if (lbPlayers.SelectedItem != null)
             {
@@ -183,7 +183,7 @@ namespace FormSchema
             }
         }
 
-        private void btnAddTeam_Click(object sender, EventArgs e)
+        private void OnAddDoublePairButtonClick(object sender, EventArgs e)
         {
             using (var newDoublePairForm = new NewDoublePairForm())
             {
@@ -203,7 +203,7 @@ namespace FormSchema
             }
         }
 
-        private void btnRemoveTeam_Click(object sender, EventArgs e)
+        private void OnRemoveDoublePairButtonClick(object sender, EventArgs e)
         {
             if (lbTeams.SelectedItem != null)
             {
@@ -229,21 +229,21 @@ namespace FormSchema
             }
         }
 
-        private void btnSavePlayers_Click(object sender, EventArgs e)
+        private void OnSavePlayersButtonClick(object sender, EventArgs e)
         {
             PlayerManager.Instance.SavePlayersCSV();
 
             MessageBox.Show("Saved settings.", "Success", MessageBoxButtons.OK);
         }
 
-        private void btnSaveCalendar_Click(object sender, EventArgs e)
+        private void OnSaveCalendarButtonClick(object sender, EventArgs e)
         {
             PlayerManager.Instance.SaveCalendarCSV();
 
             MessageBox.Show("Saved calendar.", "Success", MessageBoxButtons.OK);
         }
 
-        private void btnGenerateCalendar_Click(object sender, EventArgs e)
+        private void OnGenerateCalendarClick(object sender, EventArgs e)
         {
             using (var newCalendarForm = new NewCalendarForm())
             {
@@ -288,13 +288,13 @@ namespace FormSchema
             }
         }
 
-        private void btnClearCalendar_Click(object sender, EventArgs e)
+        private void OnClearCalendarButtonClick(object sender, EventArgs e)
         {
             lbCalendar.Items.Clear();
             PlayerManager.Instance.Calendar.Clear();
         }
 
-        private void btnAddDate_Click(object sender, EventArgs e)
+        private void OnAddDateButtonClick(object sender, EventArgs e)
         {
             if (monthCalendar.SelectionStart != null)
             {
@@ -308,7 +308,7 @@ namespace FormSchema
             }
         }
 
-        private void btnRemoveDate_Click(object sender, EventArgs e)
+        private void OnRemoveDateButtonClick(object sender, EventArgs e)
         {
             if (lbCalendar.SelectedItem != null)
             {
@@ -330,8 +330,6 @@ namespace FormSchema
                 FillCalendarListBox(selectedIndex);
             }
         }
-
-        #region Update Controls Region
 
         public void FillSinglesListBox(int? selectedIndex)
         {
@@ -469,11 +467,7 @@ namespace FormSchema
                 nudDoublesGroupSize.Maximum = 10;
         }
 
-        #endregion
-
-        #region Generate Groups Region
-
-        private void btnGenerateSingleGroups_Click(object sender, EventArgs e)
+        private void OnGenerateSingleGroupsButtonClick(object sender, EventArgs e)
         {
             using (var setPlayerRankingsForm = new SetPlayerRankingsForm())
             {
@@ -611,7 +605,7 @@ namespace FormSchema
             cbSingleGroups.SelectedIndex = 0;
         }
 
-        private void cbSingleGroups_SelectedValueChanged(object sender, EventArgs e)
+        private void OnSingleGroupsSelectedValueChanged(object sender, EventArgs e)
         {
             lbSingleGroups.Items.Clear();
             if (cbSingleGroups.SelectedItem != null)
@@ -634,7 +628,7 @@ namespace FormSchema
             }
         }
 
-        private void btnGenerateDoubleGroups_Click(object sender, EventArgs e)
+        private void OnGenerateDoublePairGroupsButtonClick(object sender, EventArgs e)
         {
             using (var setDoublesRankingsForm = new SetDoublesRankingsForm())
             {
@@ -750,8 +744,8 @@ namespace FormSchema
                 }
             }
 
-            btnAddTeam.Enabled = false;
-            btnRemoveTeam.Enabled = false;
+            btnAddDoublePair.Enabled = false;
+            btnRemoveDoublePair.Enabled = false;
 
             cbDoubleGroups.Enabled = true;
             lblSelectDoubleGroups.Enabled = true;
@@ -761,7 +755,7 @@ namespace FormSchema
             cboDoubleDouble.Enabled = false;
         }
 
-        private void cbDoubleGroups_SelectedValueChanged(object sender, EventArgs e)
+        private void OnDoublePairGroupsSelectedValueChanged(object sender, EventArgs e)
         {
             lbDoubleGroups.Items.Clear();
             if (cbDoubleGroups.SelectedItem != null)
@@ -784,11 +778,7 @@ namespace FormSchema
             }
         }
 
-        #endregion
-
-        #region Clear Groups Method Region
-
-        private void btnClearSingles_Click(object sender, EventArgs e)
+        private void OnClearSinglesButtonClick(object sender, EventArgs e)
         {
             lbSingleGroups.Items.Clear();
             cbSingleGroups.Items.Clear();
@@ -830,7 +820,7 @@ namespace FormSchema
             cboSingleDouble.Enabled = true;
         }
 
-        private void btnClearDoubles_Click(object sender, EventArgs e)
+        private void OnClearDoublesButtonClick(object sender, EventArgs e)
         {
             lbDoubleGroups.Items.Clear();
             cbDoubleGroups.Items.Clear();
@@ -859,8 +849,8 @@ namespace FormSchema
             foreach (DoublePair pair in PlayerManager.Instance.DoubleData)
                 pair.Ranking = 99;
 
-            btnAddTeam.Enabled = true;
-            btnRemoveTeam.Enabled = true;
+            btnAddDoublePair.Enabled = true;
+            btnRemoveDoublePair.Enabled = true;
 
             cbDoubleGroups.Enabled = false;
             lblSelectDoubleGroups.Enabled = false;
@@ -869,11 +859,7 @@ namespace FormSchema
             cboDoubleDouble.Enabled = true;
         }
 
-        #endregion
-
-        #region Generate Schedule Region
-
-        private void btnGenerateSchedule_Click(object sender, EventArgs e)
+        private void OnGenerateScheduleButtonClick(object sender, EventArgs e)
         {
             if (PlayerManager.Instance.Matches.Count != 0)
             {
@@ -1010,7 +996,5 @@ namespace FormSchema
             foreach (SinglePlayer player in PlayerManager.Instance.PlayerData)
                 player.CanPlay = true;
         }
-
-        #endregion
     }
 }

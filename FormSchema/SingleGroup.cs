@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,23 +8,13 @@ namespace FormSchema
 {
     public class SingleGroup : Group
     {
-        #region Field Region
-
         readonly List<SinglePlayer> players = new List<SinglePlayer>();
         bool doubleRoundRobin;
-
-        #endregion
-
-        #region Property Region
 
         public List<SinglePlayer> Players
         {
             get { return players; }
         }
-
-        #endregion
-
-        #region Constructor Region
 
         public SingleGroup(int allowedSize, int index, bool playDoubleRoundRobin)
             : base(allowedSize, index)
@@ -32,10 +22,6 @@ namespace FormSchema
             PercentageFinished = 0f;
             doubleRoundRobin = playDoubleRoundRobin;
         }
-
-        #endregion
-
-        #region Public Method Region
 
         public void AddPlayer(SinglePlayer player)
         {
@@ -84,10 +70,6 @@ namespace FormSchema
                 Console.WriteLine(schedule[i].Setup);
             }
         }
-
-        #endregion
-
-        #region Schedule Method Region
 
         private void CreateScheduleOfTwo()
         {
@@ -380,14 +362,6 @@ namespace FormSchema
             }
         }
 
-        #endregion
-
-        #region Private Method Region
-
-        #endregion
-
-        #region Virtual Method Region
-
         public override void AddToGroup(object entry)
         {
             SinglePlayer player = (SinglePlayer)entry;
@@ -442,7 +416,5 @@ namespace FormSchema
             }
             return success;
         }
-
-        #endregion
     }
 }
