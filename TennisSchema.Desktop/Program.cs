@@ -1,4 +1,4 @@
-using FormSchema.Views;
+using TennisSchema.Views;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -6,7 +6,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace FormSchema
+namespace TennisSchema
 {
     static class Program
     {
@@ -38,7 +38,6 @@ namespace FormSchema
                 ((Exception)e.ExceptionObject).Message);
 
             MessageBox.Show(message, "Unexpected Error");
-
         }
     }
 }

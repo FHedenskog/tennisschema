@@ -1,6 +1,6 @@
-namespace FormSchema.Views
+namespace TennisSchema.Views
 {
-    partial class NewDoublePairForm
+    partial class NewPlayerForm
     {
         /// <summary>
         /// Required designer variable.
@@ -28,63 +28,71 @@ namespace FormSchema.Views
         /// </summary>
         private void InitializeComponent()
         {
-            this.cbPlayer1 = new System.Windows.Forms.ComboBox();
-            this.cbPlayer2 = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.tbName = new System.Windows.Forms.TextBox();
+            this.cboPlayingSingle = new System.Windows.Forms.CheckBox();
+            this.cboPlayingDouble = new System.Windows.Forms.CheckBox();
             this.btnOK = new System.Windows.Forms.Button();
             this.btnCancel = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // cbPlayer1
-            // 
-            this.cbPlayer1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbPlayer1.FormattingEnabled = true;
-            this.cbPlayer1.Location = new System.Drawing.Point(12, 44);
-            this.cbPlayer1.MaxDropDownItems = 50;
-            this.cbPlayer1.Name = "cbPlayer1";
-            this.cbPlayer1.Size = new System.Drawing.Size(176, 21);
-            this.cbPlayer1.TabIndex = 0;
-            // 
-            // cbPlayer2
-            // 
-            this.cbPlayer2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbPlayer2.FormattingEnabled = true;
-            this.cbPlayer2.Location = new System.Drawing.Point(12, 71);
-            this.cbPlayer2.MaxDropDownItems = 50;
-            this.cbPlayer2.Name = "cbPlayer2";
-            this.cbPlayer2.Size = new System.Drawing.Size(176, 21);
-            this.cbPlayer2.TabIndex = 1;
-            // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(13, 19);
+            this.label1.Location = new System.Drawing.Point(13, 13);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(94, 13);
-            this.label1.TabIndex = 2;
-            this.label1.Text = "Select two Players";
+            this.label1.Size = new System.Drawing.Size(41, 13);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Name: ";
+            // 
+            // tbName
+            // 
+            this.tbName.Location = new System.Drawing.Point(61, 9);
+            this.tbName.Name = "tbName";
+            this.tbName.Size = new System.Drawing.Size(127, 20);
+            this.tbName.TabIndex = 1;
+            // 
+            // cboPlayingSingle
+            // 
+            this.cboPlayingSingle.AutoSize = true;
+            this.cboPlayingSingle.Location = new System.Drawing.Point(16, 53);
+            this.cboPlayingSingle.Name = "cboPlayingSingle";
+            this.cboPlayingSingle.Size = new System.Drawing.Size(92, 17);
+            this.cboPlayingSingle.TabIndex = 2;
+            this.cboPlayingSingle.Text = "Playing Single";
+            this.cboPlayingSingle.UseVisualStyleBackColor = true;
+            // 
+            // cboPlayingDouble
+            // 
+            this.cboPlayingDouble.AutoSize = true;
+            this.cboPlayingDouble.Location = new System.Drawing.Point(16, 76);
+            this.cboPlayingDouble.Name = "cboPlayingDouble";
+            this.cboPlayingDouble.Size = new System.Drawing.Size(97, 17);
+            this.cboPlayingDouble.TabIndex = 3;
+            this.cboPlayingDouble.Text = "Playing Double";
+            this.cboPlayingDouble.UseVisualStyleBackColor = true;
             // 
             // btnOK
             // 
             this.btnOK.DialogResult = System.Windows.Forms.DialogResult.OK;
-            this.btnOK.Location = new System.Drawing.Point(13, 103);
+            this.btnOK.Location = new System.Drawing.Point(12, 99);
             this.btnOK.Name = "btnOK";
-            this.btnOK.Size = new System.Drawing.Size(83, 23);
-            this.btnOK.TabIndex = 3;
+            this.btnOK.Size = new System.Drawing.Size(75, 23);
+            this.btnOK.TabIndex = 4;
             this.btnOK.Text = "OK";
             this.btnOK.UseVisualStyleBackColor = true;
             // 
             // btnCancel
             // 
             this.btnCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.btnCancel.Location = new System.Drawing.Point(102, 103);
+            this.btnCancel.Location = new System.Drawing.Point(113, 99);
             this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(83, 23);
-            this.btnCancel.TabIndex = 4;
+            this.btnCancel.Size = new System.Drawing.Size(75, 23);
+            this.btnCancel.TabIndex = 5;
             this.btnCancel.Text = "Cancel";
             this.btnCancel.UseVisualStyleBackColor = true;
             // 
-            // FormNewTeam
+            // FormNewPlayer
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -92,14 +100,15 @@ namespace FormSchema.Views
             this.ControlBox = false;
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnOK);
+            this.Controls.Add(this.cboPlayingDouble);
+            this.Controls.Add(this.cboPlayingSingle);
+            this.Controls.Add(this.tbName);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.cbPlayer2);
-            this.Controls.Add(this.cbPlayer1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-            this.Name = "FormNewTeam";
-            this.Text = "Select Pair";
+            this.Name = "FormNewPlayer";
+            this.Text = "New Player";
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -107,9 +116,10 @@ namespace FormSchema.Views
 
         #endregion
 
-        private System.Windows.Forms.ComboBox cbPlayer1;
-        private System.Windows.Forms.ComboBox cbPlayer2;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox tbName;
+        private System.Windows.Forms.CheckBox cboPlayingSingle;
+        private System.Windows.Forms.CheckBox cboPlayingDouble;
         private System.Windows.Forms.Button btnOK;
         private System.Windows.Forms.Button btnCancel;
     }

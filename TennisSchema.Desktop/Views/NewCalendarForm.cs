@@ -9,7 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace FormSchema.Views
+namespace TennisSchema.Views
 {
     public partial class NewCalendarForm : Form
     {

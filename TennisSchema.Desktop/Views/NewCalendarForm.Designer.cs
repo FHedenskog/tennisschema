@@ -1,4 +1,4 @@
-namespace FormSchema.Views
+namespace TennisSchema.Views
 {
     partial class NewCalendarForm
     {
