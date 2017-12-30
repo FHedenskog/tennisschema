@@ -92,14 +92,14 @@ namespace TennisSchema.Views
             {
                 DialogResult result = newPlayerForm.ShowDialog();
 
-                if (result == DialogResult.OK && newPlayerForm.SinglePlayer != null)
+                if (result == DialogResult.OK && newPlayerForm.Player != null)
                 {
-                    if (PlayerManager.Instance.PlayerData.Contains(newPlayerForm.SinglePlayer))
+                    if (PlayerManager.Instance.PlayerData.Contains(newPlayerForm.Player))
                     {
                         MessageBox.Show("Entry already exists. Use Edit to modify the existing entry.");
                         return;
                     }
-                    PlayerManager.Instance.PlayerData.Add(newPlayerForm.SinglePlayer);
+                    PlayerManager.Instance.PlayerData.Add(newPlayerForm.Player);
                     FillSinglesListBox(null);
                 }
             }
@@ -110,7 +110,7 @@ namespace TennisSchema.Views
             if (lbPlayers.SelectedItem != null)
             {
                 string name = lbPlayers.SelectedItem.ToString();
-                SinglePlayer selectedPlayer = PlayerManager.Instance.GetPlayer(name);
+                Player selectedPlayer = PlayerManager.Instance.GetPlayer(name);
 
                 if (selectedPlayer.IsInTeam)
                 {
@@ -141,26 +141,26 @@ namespace TennisSchema.Views
             if (lbPlayers.SelectedItem != null)
             {
                 string name = lbPlayers.SelectedItem.ToString();
-                SinglePlayer selectedPlayer = PlayerManager.Instance.GetPlayer(name);
-                SinglePlayer player = new SinglePlayer();
+                Player selectedPlayer = PlayerManager.Instance.GetPlayer(name);
+                Player player = new Player();
                 player.CopyStats(selectedPlayer);
 
                 using (var newPlayerForm = new NewPlayerForm())
                 {
-                    newPlayerForm.SinglePlayer = player;
+                    newPlayerForm.Player = player;
                     newPlayerForm.ShowDialog();
 
-                    if (newPlayerForm.SinglePlayer == null)
+                    if (newPlayerForm.Player == null)
                         return;
 
-                    if (newPlayerForm.SinglePlayer.Name == selectedPlayer.Name)
+                    if (newPlayerForm.Player.Name == selectedPlayer.Name)
                     {
-                        selectedPlayer.CopyStats(newPlayerForm.SinglePlayer);
+                        selectedPlayer.CopyStats(newPlayerForm.Player);
                         FillSinglesListBox(lbPlayers.SelectedIndex);
                         return;
                     }
 
-                    player = newPlayerForm.SinglePlayer;
+                    player = newPlayerForm.Player;
                 }
 
                 DialogResult result = MessageBox.Show(
@@ -334,7 +334,7 @@ namespace TennisSchema.Views
         public void FillSinglesListBox(int? selectedIndex)
         {
             lbPlayers.Items.Clear();
-            foreach (SinglePlayer player in PlayerManager.Instance.PlayerData)
+            foreach (Player player in PlayerManager.Instance.PlayerData)
             {
                 lbPlayers.Items.Add(player.ToString());
             }
@@ -388,7 +388,7 @@ namespace TennisSchema.Views
         public void UpdateSinglePlayerSettings()
         {
             int count = 0;
-            foreach (SinglePlayer player in PlayerManager.Instance.PlayerData)
+            foreach (Player player in PlayerManager.Instance.PlayerData)
             {
                 if (player.PlayingSingle)
                 {
@@ -478,7 +478,7 @@ namespace TennisSchema.Views
                     int count = 0;
                     int preferredGroupSize = (int)nudSinglesGroupSize.Value;
 
-                    foreach (SinglePlayer player in PlayerManager.Instance.PlayerData)
+                    foreach (Player player in PlayerManager.Instance.PlayerData)
                     {
                         if (player.PlayingSingle)
                         {
@@ -578,7 +578,7 @@ namespace TennisSchema.Views
 
                     while (singleGroup.Players.Count < singleGroup.AllowedSize)
                     {
-                        foreach (SinglePlayer player in PlayerManager.Instance.PlayerData)
+                        foreach (Player player in PlayerManager.Instance.PlayerData)
                         {
                             if (!player.PlayingSingle)
                                 continue;
@@ -618,7 +618,7 @@ namespace TennisSchema.Views
                         singleGroup = group as SingleGroup;
                         if (singleGroup.Name == cbSingleGroups.SelectedItem.ToString())
                         {
-                            foreach (SinglePlayer player in singleGroup.Players)
+                            foreach (Player player in singleGroup.Players)
                             {
                                 lbSingleGroups.Items.Add(player);
                             }
@@ -806,7 +806,7 @@ namespace TennisSchema.Views
                     break;
             }
 
-            foreach (SinglePlayer player in PlayerManager.Instance.PlayerData)
+            foreach (Player player in PlayerManager.Instance.PlayerData)
                 player.Ranking = 0;
 
             btnAddPlayer.Enabled = true;
@@ -993,7 +993,7 @@ namespace TennisSchema.Views
 
         private void ActivatePlayers()
         {
-            foreach (SinglePlayer player in PlayerManager.Instance.PlayerData)
+            foreach (Player player in PlayerManager.Instance.PlayerData)
                 player.CanPlay = true;
         }
     }

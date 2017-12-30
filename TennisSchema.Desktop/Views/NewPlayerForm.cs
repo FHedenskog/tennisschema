@@ -12,9 +12,9 @@ namespace TennisSchema.Views
 {
     public partial class NewPlayerForm : Form
     {
-        private SinglePlayer _singlePlayer;
+        private Player _player;
 
-        public SinglePlayer SinglePlayer { get { return _singlePlayer; } set { _singlePlayer = value; } }
+        public Player Player { get { return _player; } set { _player = value; } }
 
         public NewPlayerForm()
         {
@@ -28,13 +28,13 @@ namespace TennisSchema.Views
 
         private void OnNewPlayerFormLoad(object sender, EventArgs e)
         {
-            if (SinglePlayer != null)
+            if (Player != null)
             {
-                tbName.Text = SinglePlayer.Name;
-                cboPlayingSingle.Checked = SinglePlayer.PlayingSingle;
-                cboPlayingDouble.Checked = SinglePlayer.PlayingDouble;
+                tbName.Text = Player.Name;
+                cboPlayingSingle.Checked = Player.PlayingSingle;
+                cboPlayingDouble.Checked = Player.PlayingDouble;
 
-                if (SinglePlayer.IsInTeam)
+                if (Player.IsInTeam)
                 {
                     cboPlayingDouble.Enabled = false;
                 }
@@ -67,16 +67,16 @@ namespace TennisSchema.Views
                 return;
             }
 
-            _singlePlayer = new SinglePlayer();
-            _singlePlayer.Name = tbName.Text;
-            _singlePlayer.PlayingSingle = cboPlayingSingle.Checked;
-            _singlePlayer.PlayingDouble = cboPlayingDouble.Checked;
-            _singlePlayer.CanPlay = true;
+            _player = new Player();
+            _player.Name = tbName.Text;
+            _player.PlayingSingle = cboPlayingSingle.Checked;
+            _player.PlayingDouble = cboPlayingDouble.Checked;
+            _player.CanPlay = true;
 
             if (!cboPlayingDouble.Enabled)
-                _singlePlayer.IsInTeam = true;
+                _player.IsInTeam = true;
             else
-                _singlePlayer.IsInTeam = false;
+                _player.IsInTeam = false;
             
             
             this.FormClosing -= OnNewPlayerFormClosing;
@@ -85,7 +85,7 @@ namespace TennisSchema.Views
 
         private void OnCancelButtonClick(object sender, EventArgs e)
         {
-            _singlePlayer = null;
+            _player = null;
 
             this.FormClosing -= OnNewPlayerFormClosing;
             this.Close();

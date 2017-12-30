@@ -30,7 +30,7 @@ namespace TennisSchema.Views
             lbRankings.Items.Clear();
             int currentRank = 1;
 
-            foreach (SinglePlayer player in PlayerManager.Instance.PlayerData)
+            foreach (Player player in PlayerManager.Instance.PlayerData)
             {
                 if (player.PlayingSingle)
                 {
@@ -73,13 +73,13 @@ namespace TennisSchema.Views
                 string promotedFullName = lbRankings.SelectedItem.ToString();
                 string[] promotedParts = promotedFullName.Split(',');
                 string promotedName = promotedParts[0].Trim();
-                SinglePlayer promotedPlayer = PlayerManager.Instance.GetPlayer(promotedName);
+                Player promotedPlayer = PlayerManager.Instance.GetPlayer(promotedName);
                 promotedPlayer.Ranking -= 1;
 
                 string demotedFullName = lbRankings.Items[lbRankings.SelectedIndex - 1].ToString();
                 string[] demotedParts = demotedFullName.Split(',');
                 string demotedName = demotedParts[0].Trim();
-                SinglePlayer demotedPlayer = PlayerManager.Instance.GetPlayer(demotedName);
+                Player demotedPlayer = PlayerManager.Instance.GetPlayer(demotedName);
                 demotedPlayer.Ranking += 1;
 
                 int newSelectedIndex = lbRankings.SelectedIndex - 1;
@@ -96,13 +96,13 @@ namespace TennisSchema.Views
                 string demotedFullName = lbRankings.SelectedItem.ToString();
                 string[] demotedParts = demotedFullName.Split(',');
                 string demotedName = demotedParts[0].Trim();
-                SinglePlayer demotedPlayer = PlayerManager.Instance.GetPlayer(demotedName);
+                Player demotedPlayer = PlayerManager.Instance.GetPlayer(demotedName);
                 demotedPlayer.Ranking += 1;
 
                 string promotedFullName = lbRankings.Items[lbRankings.SelectedIndex + 1].ToString();
                 string[] promotedParts = promotedFullName.Split(',');
                 string promotedName = promotedParts[0].Trim();
-                SinglePlayer promotedPlayer = PlayerManager.Instance.GetPlayer(promotedName);
+                Player promotedPlayer = PlayerManager.Instance.GetPlayer(promotedName);
                 promotedPlayer.Ranking -= 1;
 
                 int newSelectedIndex = lbRankings.SelectedIndex + 1;
@@ -125,7 +125,7 @@ namespace TennisSchema.Views
             int currentRank = 1;
             while (currentRank <= playerCount)
             {
-                foreach (SinglePlayer player in PlayerManager.Instance.PlayerData)
+                foreach (Player player in PlayerManager.Instance.PlayerData)
                 {
                     if (player.Ranking == currentRank)
                     {

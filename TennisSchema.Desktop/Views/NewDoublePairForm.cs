@@ -33,7 +33,7 @@ namespace TennisSchema.Views
 
         private void OnNewDoublePairFormLoad(object sender, EventArgs e)
         {
-            foreach (SinglePlayer player in PlayerManager.Instance.PlayerData)
+            foreach (Player player in PlayerManager.Instance.PlayerData)
             {
                 if (player.PlayingDouble && !player.IsInTeam)
                 {

@@ -111,7 +111,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SingleGroup.cs" />
     <Compile Include="SingleMatch.cs" />
-    <Compile Include="SinglePlayer.cs" />
+    <Compile Include="Player.cs" />
     <Compile Include="TimeSlot.cs" />
     <EmbeddedResource Include="Views\TennisSchemaGeneratorForm.resx">
       <DependentUpon>TennisSchemaGeneratorForm.cs</DependentUpon>
