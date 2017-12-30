@@ -29,10 +29,10 @@ namespace TennisSchema
 
         public override bool PlayersReady()
         {
-            SinglePlayer pair1player1 = PlayerManager.Instance.GetPlayer(pair1.FirstPlayer);
-            SinglePlayer pair1player2 = PlayerManager.Instance.GetPlayer(pair1.SecondPlayer);
-            SinglePlayer pair2player1 = PlayerManager.Instance.GetPlayer(pair2.FirstPlayer);
-            SinglePlayer pair2player2 = PlayerManager.Instance.GetPlayer(pair2.SecondPlayer);
+            Player pair1player1 = PlayerManager.Instance.GetPlayer(pair1.FirstPlayer);
+            Player pair1player2 = PlayerManager.Instance.GetPlayer(pair1.SecondPlayer);
+            Player pair2player1 = PlayerManager.Instance.GetPlayer(pair2.FirstPlayer);
+            Player pair2player2 = PlayerManager.Instance.GetPlayer(pair2.SecondPlayer);
 
             if (pair1player1.CanPlay &&
                 pair1player2.CanPlay &&
@@ -53,10 +53,10 @@ namespace TennisSchema
 
         public override void RestPlayers()
         {
-            SinglePlayer pair1player1 = PlayerManager.Instance.GetPlayer(pair1.FirstPlayer);
-            SinglePlayer pair1player2 = PlayerManager.Instance.GetPlayer(pair1.SecondPlayer);
-            SinglePlayer pair2player1 = PlayerManager.Instance.GetPlayer(pair2.FirstPlayer);
-            SinglePlayer pair2player2 = PlayerManager.Instance.GetPlayer(pair2.SecondPlayer);
+            Player pair1player1 = PlayerManager.Instance.GetPlayer(pair1.FirstPlayer);
+            Player pair1player2 = PlayerManager.Instance.GetPlayer(pair1.SecondPlayer);
+            Player pair2player1 = PlayerManager.Instance.GetPlayer(pair2.FirstPlayer);
+            Player pair2player2 = PlayerManager.Instance.GetPlayer(pair2.SecondPlayer);
 
             pair1player1.CanPlay = false;
             pair1player2.CanPlay = false;

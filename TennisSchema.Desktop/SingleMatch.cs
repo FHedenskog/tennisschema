@@ -8,22 +8,22 @@ namespace TennisSchema
 {
     public class SingleMatch : Match
     {
-        private SinglePlayer player1;
-        private SinglePlayer player2;
+        private Player player1;
+        private Player player2;
 
-        public SinglePlayer Player1
+        public Player Player1
         {
             get { return player1; }
             private set { player1 = value; }
         }
 
-        public SinglePlayer Player2
+        public Player Player2
         {
             get { return player2; }
             private set { player2 = value; }
         }
 
-        public SingleMatch(SinglePlayer player1, SinglePlayer player2, DateTime? date)
+        public SingleMatch(Player player1, Player player2, DateTime? date)
             : base()
         {
             Player1 = player1;

@@ -8,10 +8,10 @@ namespace TennisSchema
 {
     public class SingleGroup : Group
     {
-        readonly List<SinglePlayer> players = new List<SinglePlayer>();
+        readonly List<Player> players = new List<Player>();
         bool doubleRoundRobin;
 
-        public List<SinglePlayer> Players
+        public List<Player> Players
         {
             get { return players; }
         }
@@ -23,7 +23,7 @@ namespace TennisSchema
             doubleRoundRobin = playDoubleRoundRobin;
         }
 
-        public void AddPlayer(SinglePlayer player)
+        public void AddPlayer(Player player)
         {
             players.Add(player);
         }
@@ -364,7 +364,7 @@ namespace TennisSchema
 
         public override void AddToGroup(object entry)
         {
-            SinglePlayer player = (SinglePlayer)entry;
+            Player player = (Player)entry;
             players.Add(player);
         }
 

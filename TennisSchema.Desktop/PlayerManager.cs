@@ -15,7 +15,7 @@ namespace TennisSchema
     {
         private static PlayerManager instance;
 
-        List<SinglePlayer> playerData = new List<SinglePlayer>();
+        List<Player> playerData = new List<Player>();
         List<DoublePair> doubleData = new List<DoublePair>();
         List<string> playersPlayingDouble = new List<string>();
 
@@ -45,7 +45,7 @@ namespace TennisSchema
             }
         }
 
-        public List<SinglePlayer> PlayerData
+        public List<Player> PlayerData
         {
             get { return playerData; }
         }
@@ -77,7 +77,7 @@ namespace TennisSchema
 
         public void SetTeamStatus(DoublePair pair, bool status)
         {
-            foreach (SinglePlayer player in PlayerData)
+            foreach (Player player in PlayerData)
             {
                 if (pair.FirstPlayer == player.Name)
                 {
@@ -91,9 +91,9 @@ namespace TennisSchema
             }
         }
 
-        public SinglePlayer GetPlayer(string name)
+        public Player GetPlayer(string name)
         {
-            foreach (SinglePlayer player in PlayerData)
+            foreach (Player player in PlayerData)
             {
                 if (name == player.Name)
                 {
@@ -131,7 +131,7 @@ namespace TennisSchema
         {
             using (StreamWriter writer = new StreamWriter(CSV_FILENAME_MEMBERS))
             {
-                foreach (SinglePlayer player in PlayerData)
+                foreach (Player player in PlayerData)
                 {
                     writer.WriteLine(player.FormatCSV());
                 }
@@ -166,7 +166,7 @@ namespace TennisSchema
                     string line = "";
                     while ((line = reader.ReadLine()) != null)
                     {
-                        SinglePlayer temp = new SinglePlayer();
+                        Player temp = new Player();
                         temp.CopyCSVData(line);
                         PlayerData.Add(temp);
                     }

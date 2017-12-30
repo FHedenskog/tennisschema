@@ -6,8 +6,9 @@ using System.Threading.Tasks;
 
 namespace TennisSchema
 {
-    public class SinglePlayer
+    public class Player
     {
+        public int PlayerId;
         public string Name;
 
         public bool CanPlay;
@@ -20,7 +21,7 @@ namespace TennisSchema
 
         public int Ranking;
 
-        public SinglePlayer()
+        public Player()
         {
         }
 
@@ -39,7 +40,7 @@ namespace TennisSchema
             return toString;
         }
 
-        public void CopyStats(SinglePlayer otherPlayer)
+        public void CopyStats(Player otherPlayer)
         {
             this.Name = otherPlayer.Name;
             this.CanPlay = otherPlayer.CanPlay;
